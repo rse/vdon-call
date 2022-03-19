@@ -77,13 +77,13 @@ The solution consists of the following logical parts:
 
 - **URL Trampoline**
 
-This is the URL trampoline which is deployed to a publically reachable
-URL like `https://studio.msg.team/vdon/` and which can be used by the
-production crew to easily generate the required "short" URLs. Its
-trampoline functionality on access of these "short" URLs expand to the
-underlying, technical, heavily-parameterized VDO.Ninja URLs.
+  This is the URL trampoline which is deployed to a publically reachable
+  URL like `https://studio.msg.team/vdon/` and which can be used by the
+  production crew to easily generate the required "short" URLs. Its
+  trampoline functionality on access of these "short" URLs expand to the
+  underlying, technical, heavily-parameterized VDO.Ninja URLs.
 
-![](vdon-call-shot-1-trampoline.png)
+  ![](vdon-call-shot-1-trampoline.png)
 
 - **Caller (Sender)**
 
