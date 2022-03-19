@@ -48,16 +48,6 @@ in heavy constraints on the particular VDO.Ninja parameters:
    connections available in Germany. As a result, the return feed uses
    1080p29.97 with a maximum bitrate of 3000 kbps.
 
-Components
-----------
-
-The solution consists of the following logical parts:
-
-- **Caller (Sender)**
-- **Caller (Receiver)**
-- **Production (Sender)**
-- **Director (Control)**
-
 Prerequisites
 -------------
 
@@ -70,16 +60,46 @@ The solution requires the following software as a prerequisite:
 Installation
 ------------
 
-The solution technically consists of three files:
+The solution technically consists of two parts:
 
-1. [vdon-call.html](vdon-call.html): the URL trampoline. Install
-   it as `index.html` to an arbitrary Internet service.
+1. [vdon-call.html](vdon-call.html): the URL trampoline, a
+   small webpage which generates the heavily parameterized VDO.Ninja
+   URLs. Install it as `index.html` to an arbitrary Internet service.
 
-2. [vdon-call/basic.ini](vdon-call/basic.ini): the OBS Studio profile.
-   Import it into OBS Studio.
+2. [vdon-call/basic.ini](vdon-call/basic.ini) and
+   [vdon-call.json](vdon-call.json): the OBS Studio profile and scene collection,
+   which configures OBS Studio as a WebRTC-to-NDI gateway.
 
-3. [vdon-call.json](vdon-call.json): the OBS Studio scene collection.
-   Import it into OBS Studio.
+Components
+----------
+
+The solution consists of the following logical parts:
+
+- **URL Trampoline**
+
+This is the URL trampoline which is deployed to a publically reachable
+URL like `https://studio.msg.team/vdon/` and which can be used by the
+production crew to easily generate the required "short" URLs. Its
+trampoline functionality on access of these "short" URLs expand to the
+underlying, technical, heavily-parameterized VDO.Ninja URLs.
+
+![](vdon-call-shot-1-trampoline.png)
+
+- **Caller (Sender)**
+
+![](vdon-call-shot-2-caller-sender.png)
+
+- **Caller (Receiver)**
+
+![](vdon-call-shot-3-caller-receiver.png)
+
+- **Production (Sender)**
+
+![](vdon-call-shot-4-production.png)
+
+- **Director (Control)**
+
+![](vdon-call-shot-5-director.png)
 
 Copyright & License
 -------------------
