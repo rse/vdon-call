@@ -9,17 +9,18 @@ facility.
 Motivation
 ----------
 
-Its name is inspired by [vMix Call](https://www.vmix.com/products/vmix-call.aspx),
-the great but weaker facility it can substitute in practice. The
-motivation and primary killer feature of VDON Call, in contrast to the
-otherwise also awesome vMix Call, is that the callers can ingest their
-camera and content in parallel without having to fiddle around with two
-independent Browser tabs and that this dual-ingest approach is available
-for 8 callers in total instead of just 4 (notice that vMix Call supports
-a maximum of 8 incoming video streams only). The resulting ingested
-video streams are available as NDI streams on the local network and can
-be consumed (on a separate computer) with a video mixing software like
-vMix or OBS Studio.
+The name of this solution is inspired by
+[vMix Call](https://www.vmix.com/products/vmix-call.aspx), the great but
+weaker facility it can substitute in practice. The motivation and
+primary killer feature of VDON Call, in contrast to the otherwise also
+awesome vMix Call, is that the callers can ingest their camera and
+content in parallel without having to fiddle around with two independent
+Browser tabs and that this dual-ingest approach is available for 8
+callers in total instead of just 4 (notice that vMix Call supports a
+maximum of 8 incoming video streams only). The resulting ingested video
+streams are available as NDI streams on the local network and can be
+easily consumed (usually on a separate computer) with a video mixing
+software like vMix or OBS Studio.
 
 Constraints
 -----------
@@ -30,17 +31,19 @@ ingest up to 8 callers with their camera and shared content (screen or
 window) into the video production and to provide a return feed from the
 video production back to the callers. The callers can hear but not see
 each other, except the provided return feed is some sort of multiview
-and shows all callers.
+and shows all callers. This is intentional, as this is not a general
+conferencing solution, but just a way to ingest remote callers of a
+video production.
 
-There are two particular bottlenecks in this approach, which result
-in heavy constraints on the particular VDO.Ninja parameters:
+There are two particular bottlenecks in this approach, which are
+addressed by the particular VDO.Ninja parameterization:
 
 1. The caller receiver-side is an OBS Studio, acting as a WebRTC-to-NDI
    gateway and has to run on a medium gaming PC (Intel Core i7 11700KF,
-   NVIDIA RTX 3070Ti, 32GB RAM) with just about a maximum of overall
-   80% resource utilization. As a result, the callers camera use 720p24
-   and a bitrate of 2000 kbps and the callers content use 1080p6 and a
-   bitrate of 3000 kbps.
+   NVIDIA RTX 3070Ti, 32GB RAM) with just about a maximum of about 80%
+   overall resource utilization. As a result, the callers camera use
+   720p24 and a bitrate of 2000 kbps and the callers content use 1080p6
+   and a bitrate of 3000 kbps.
     
 2. The production sender-side, providing the return feed of the video 
    production back to the caller, should require no more than half of
@@ -56,6 +59,10 @@ The solution requires the following software as a prerequisite:
 - [NDI Tools](https://www.ndi.tv/tools/)
 - [OBS Studio](https://obsproject.com/)
 - [OBS NDI](https://github.com/Palakis/obs-ndi/)
+
+The solution optionally requires a video mixing software like vMix or
+OBS Studio to consume and mix the NDI streams of the callers and feed a
+video device with the return feed for the callers.
 
 Installation
 ------------
