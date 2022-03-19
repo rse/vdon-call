@@ -87,19 +87,52 @@ The solution consists of the following logical parts:
 
 - **Caller (Sender)**
 
-![](vdon-call-shot-2-caller-sender.png)
+  This is the caller sender-side, i.e., Google Chrome opened a URL
+  like `https://studio.msg.team/vdon/#/example/sender/C1/Caller-1`.
+  The result the VDO.Ninja user interface, configured for a caller
+  participating in a room where the user can only see its own camera and
+  shared content preview and the return feed of the production (here
+  a multiview from vMix).
+
+  ![](vdon-call-shot-2-caller-sender.png)
 
 - **Caller (Receiver)**
 
-![](vdon-call-shot-3-caller-receiver.png)
+  This is the caller receiver-side, i.e., OBS Studio with the VDON
+  Call profile and scene collection loaded which accesses URLs like
+  `https://studio.msg.team/vdon/#/example/receiver/C1/camera` and
+  `https://studio.msg.team/vdon/#/example/receiver/C1/content`. For an
+  overview, a special multiview scene is in preview (and also exposed
+  via NDI for inclusion into the multiview of the production -- see
+  below).
+
+  ![](vdon-call-shot-3-caller-receiver.png)
 
 - **Production (Sender)**
 
-![](vdon-call-shot-4-production.png)
+  This is the video production. It uses a video mixing software
+  like vMix (shown here) or OBS Studio (an alternative). This
+  production receives all callers (and the multiview) from OBS
+  Studio via NDI and mixes them into a resulting program video
+  stream. For convenience reasons, beside this program video
+  stream, this vMix instance also exports a multiview video stream
+  which shows the caller ingest multiview, selected callers, the
+  program video stream and the clock. Either the program or (as
+  shown shere) the multiview video stream is then send back to the
+  callers via a companion Google Chrome instance accessing the URL
+  `https://studio.msg.team/vdon/#/msgFilmstudio/production/A1/p2p`.
+
+  ![](vdon-call-shot-4-production.png)
 
 - **Director (Control)**
 
-![](vdon-call-shot-5-director.png)
+  This is the optional VDO.Ninja director
+  view, i.e., Google Chrome accessing the URL
+  `https://studio.msg.team/vdon/#/msgFilmstudio/director/D1/Director-1`
+  where the production crew can send messages to the callers, adjust the
+  parameters of the callers, etc.
+
+  ![](vdon-call-shot-5-director.png)
 
 Copyright & License
 -------------------
