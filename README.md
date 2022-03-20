@@ -2,14 +2,16 @@
 VDON Call
 =========
 
-This is remote caller ingest solution for video productions, based on
-the awesome [VDO.Ninja](https://vdo.ninja) WebRTC-based video streaming
-facility.
+This is a [NDI](https://ndi.tv)-based remote caller ingest solution
+for video productions, based on two swiss army knifes in their field:
+the awesome, low-latency, WebRTC-based video streaming facility
+[VDO.Ninja](https://vdo.ninja) and the awesome, ultra-flexible video
+mixer software [OBS Studio](https://obsproject.com).
 
 Motivation
 ----------
 
-The name of this solution is inspired by
+The name VDON Call of this solution is inspired by
 [vMix Call](https://www.vmix.com/products/vmix-call.aspx), the great but
 weaker facility it can substitute in practice. The motivation and
 primary killer feature of VDON Call, in contrast to the otherwise also
