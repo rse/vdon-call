@@ -62,17 +62,20 @@ Installation
 The solution consists of the following parts which have to be installed:
 
 1. [index.html](index.html): the URL trampoline, a
-   small webpage which generates the heavily parameterized VDO.Ninja
+   tiny webpage which generates the underlying, heavily parameterized VDO.Ninja
    URLs. Install it as `index.html` to an arbitrary Internet service.
    The page without any attached parameters is usually only used
    by the video production crew to generate URLs. The page
    with attached parameters is used by all **VDON Call** components
    to expand the short URLs to the underlying VDO.Ninja URLs.
+   For convenience reasons, an instance of this URL trampoline
+   is publically available under the meaningful name URL
+   [caller.studio](https://caller.studio).
 
 2. [obs-studio/basic.ini](obs-studio/basic.ini) and
    [obs-studio.json](obs-studio.json): the OBS Studio profile and scene collection,
    which configures OBS Studio as a WebRTC-to-NDI gateway. For this to work,
-   you have to install the following prerequisites:
+   you have to locally install the following prerequisites:
 
    - [NDI Tools](https://www.ndi.tv/tools/)
    - [OBS Studio](https://obsproject.com/)
@@ -92,7 +95,7 @@ The solution consists of the following logical parts:
 - **URL Trampoline**
 
   This is the URL trampoline which is deployed to a publically reachable
-  URL like `https://caller.studio/` and which can be used by the
+  URL like `https://caller.studio`, and which can be used by the
   production crew to easily generate the required "short" URLs. Its
   trampoline functionality on access of these "short" URLs expand to the
   underlying, technical, heavily-parameterized VDO.Ninja URLs.
