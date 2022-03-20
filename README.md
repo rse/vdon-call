@@ -1,6 +1,8 @@
 
 VDON Call
 =========
+  
+![](vdon-call-shot-3-caller-receiver.png|width=300)
 
 This is a [NDI](https://ndi.tv)-based remote caller ingest solution
 for video productions, based on two swiss army knifes in their field:
