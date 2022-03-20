@@ -110,8 +110,9 @@ The solution consists of the following logical parts:
 
 - **Caller (Receiver)**
 
-  This is the caller receiver-side, i.e., OBS Studio with the VDON
-  Call profile and scene collection loaded which accesses URLs like
+  This is the heart of the solution, the caller receiver-side,
+  i.e., OBS Studio with the VDON Call profile and
+  scene collection loaded which accesses URLs like
   `https://studio.msg.team/vdon/#/example/receiver/C1/camera` and
   `https://studio.msg.team/vdon/#/example/receiver/C1/content`. For an
   overview, a special multiview scene is in preview (and also exposed
@@ -123,7 +124,7 @@ The solution consists of the following logical parts:
 - **Production (Sender)**
 
   This is the video production. It uses a video mixing software
-  like vMix (shown here) or OBS Studio (an alternative). This
+  like vMix (shown here) or OBS Studio (as a decent alternative). This
   production receives all callers (and the multiview) from OBS
   Studio via NDI and mixes them into a resulting program video
   stream. For convenience reasons, beside this program video
