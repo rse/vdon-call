@@ -127,7 +127,7 @@ The solution consists of the following logical parts:
   program video stream and the clock. Either the program or (as
   shown shere) the multiview video stream is then send back to the
   callers via a companion Google Chrome instance accessing the URL
-  `https://studio.msg.team/vdon/#/msgFilmstudio/production/A1/p2p`.
+  `https://studio.msg.team/vdon/#/example/production/A1/p2p`.
 
   ![](vdon-call-shot-4-production.png)
 
@@ -135,7 +135,7 @@ The solution consists of the following logical parts:
 
   This is the optional VDO.Ninja director
   view, i.e., Google Chrome accessing the URL
-  `https://studio.msg.team/vdon/#/msgFilmstudio/director/D1/Director-1`
+  `https://studio.msg.team/vdon/#/example/director/D1/Director-1`
   where the production crew can send messages to the callers, adjust the
   parameters of the callers, etc.
 
