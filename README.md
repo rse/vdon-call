@@ -72,14 +72,26 @@ The solution consists of the following parts which have to be installed:
    is publically available under the meaningful name URL
    [caller.studio](https://caller.studio).
 
-2. [obs-studio/basic.ini](obs-studio/basic.ini) and
-   [obs-studio.json](obs-studio.json): the OBS Studio profile and scene collection,
+2. [obs-studio/basic.ini](obs-studio/basic.ini),
+   [obs-studio.json](obs-studio.json) and
+   [obs-studio.lua](obs-studio.lua):
+   the OBS Studio profile, scene collection and configuration update script,
    which configures OBS Studio as a WebRTC-to-NDI gateway. For this to work,
    you have to locally install the following prerequisites:
 
    - [NDI Tools](https://www.ndi.tv/tools/)
    - [OBS Studio](https://obsproject.com/)
    - [OBS NDI](https://github.com/Palakis/obs-ndi/)
+
+   Then use *Profile* &rarr; *Import* for importing the
+   [obs-studio/](obs-studio/) directory. Then use *Scene Collection*
+   &rarr; *Import* for importing the [obs-studio.json](obs-studio.json)
+   file. Then, use *Tools* &rarr; *Scripts* &rarr; `+` for importing the
+   [obs-studio.lua](obs-studio.lua) file.
+
+   Once this is done, use *Tools* &rarr; *Scripts* &rarr;
+   `obs-studio.lua` to update all browser sources in OBS Studio with
+   your URL trampoline information.
 
 3. The solution optionally requires a video mixing software like vMix or
    OBS Studio to consume and mix the NDI streams of the callers and produce a
