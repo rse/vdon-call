@@ -147,6 +147,17 @@ The solution consists of the following logical parts:
 
   ![](vdon-call-shot-5-director.png)
 
+See Also
+--------
+
+This solution was announced in the following communities:
+
+- [Reddit: VDO.Ninja](https://www.reddit.com/r/VDONinja/comments/ti8jz4/vdon_call_remote_caller_ingest_via_vdoninja_to/)
+- [Reddit: OBS Studio](https://www.reddit.com/r/obs/comments/tihbxz/vdon_call_external_ndibased_remote_caller_ingest/)
+- [Reddit: vMix](https://www.reddit.com/r/vmix/comments/ti8r3g/vdon_call_remote_caller_ingest_via_vdoninja_obs/)
+- [vMix: vMix Call](https://forums.vmix.com/posts/t28731-VDON-Call--a-vMix-Call-substitute--when-parallel-camera-and-screen-sharing-is-required)
+- [Twitter: Engelschall](https://twitter.com/engelschall/status/1505340731593998339)
+
 Copyright & License
 -------------------
 
