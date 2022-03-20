@@ -28,7 +28,7 @@ software like vMix or OBS Studio.
 Constraints
 -----------
 
-The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/vdon-call.html#L282) is very opinionated and
+The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/index.html#L313) is very opinionated and
 heavily optimized for a total of 16+1 video streams, to allow one to
 ingest up to 8 callers with their camera and shared content (screen or
 window) into the video production and to provide a return feed from the
@@ -59,7 +59,7 @@ Installation
 
 The solution consists of the following parts which have to be installed:
 
-1. [vdon-call.html](vdon-call.html): the URL trampoline, a
+1. [index.html](index.html): the URL trampoline, a
    small webpage which generates the heavily parameterized VDO.Ninja
    URLs. Install it as `index.html` to an arbitrary Internet service.
    The page without any attached parameters is usually only used
@@ -67,8 +67,8 @@ The solution consists of the following parts which have to be installed:
    with attached parameters is used by all VDON Call components
    to expand the short URLs to the underlying VDO.Ninja URLs.
 
-2. [vdon-call/basic.ini](vdon-call/basic.ini) and
-   [vdon-call.json](vdon-call.json): the OBS Studio profile and scene collection,
+2. [obs-studio/basic.ini](obs-studio/basic.ini) and
+   [obs-studio.json](obs-studio.json): the OBS Studio profile and scene collection,
    which configures OBS Studio as a WebRTC-to-NDI gateway. For this to work,
    you have to install the following prerequisites:
 
@@ -90,36 +90,36 @@ The solution consists of the following logical parts:
 - **URL Trampoline**
 
   This is the URL trampoline which is deployed to a publically reachable
-  URL like `https://studio.msg.team/vdon/` and which can be used by the
+  URL like `https://caller.studio/` and which can be used by the
   production crew to easily generate the required "short" URLs. Its
   trampoline functionality on access of these "short" URLs expand to the
   underlying, technical, heavily-parameterized VDO.Ninja URLs.
 
-  ![](vdon-call-shot-1-trampoline.png)
+  ![](shot-1-trampoline.png)
 
 - **Caller (Sender)**
 
   This is the caller sender-side, i.e., Google Chrome opened a URL
-  like `https://studio.msg.team/vdon/#/example/sender/C1/Caller-1`.
+  like `https://caller.studio/#/example/example/C1`.
   The result the VDO.Ninja user interface, configured for a caller
   participating in a room where the user can only see its own camera and
   shared content preview and the return feed of the production (here
   a multiview from vMix).
 
-  ![](vdon-call-shot-2-caller-sender.png)
+  ![](shot-2-caller-sender.png)
 
 - **Caller (Receiver)**
 
   This is the heart of the solution, the caller receiver-side,
   i.e., OBS Studio with the VDON Call profile and
   scene collection loaded which accesses URLs like
-  `https://studio.msg.team/vdon/#/example/receiver/C1/camera` and
-  `https://studio.msg.team/vdon/#/example/receiver/C1/content`. For an
+  `https://caller.studio/#/example/example/C1/camera` and
+  `https://caller.studio/#/example/example/C1/content`. For an
   overview, a special multiview scene is in preview (and also exposed
   via NDI for inclusion into the multiview of the production -- see
   below).
 
-  ![](vdon-call-shot-3-caller-receiver.png)
+  ![](shot-3-caller-receiver.png)
 
 - **Production (Sender)**
 
@@ -133,19 +133,19 @@ The solution consists of the following logical parts:
   program video stream and the clock. Either the program or (as
   shown shere) the multiview video stream is then send back to the
   callers via a companion Google Chrome instance accessing the URL
-  `https://studio.msg.team/vdon/#/example/production/A1/p2p`.
+  `https://caller.studio/#/example/example/A1/p2p`.
 
-  ![](vdon-call-shot-4-production.png)
+  ![](shot-4-production.png)
 
 - **Director (Control)**
 
   This is the optional VDO.Ninja director
   view, i.e., Google Chrome accessing the URL
-  `https://studio.msg.team/vdon/#/example/director/D1/Director-1`
+  `https://caller.studio/#/example/example/D1`
   where the production crew can send messages to the callers, adjust the
   parameters of the callers, etc.
 
-  ![](vdon-call-shot-5-director.png)
+  ![](shot-5-director.png)
 
 See Also
 --------

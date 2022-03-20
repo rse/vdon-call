@@ -14,12 +14,13 @@
         <meta http-equiv="Expires" content="0">
         <title>VDON Call</title>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pure-uuid@1.6.2/uuid.min.js"></script>
         <style>
             body {
                 font-family: "Calibri", "Helvetica", sans-serif;
                 font-size: 12pt;
-                background-color: #333333;
-                color: #e0e0e0;
+                background-color: #303030;
+                color: #c0c0c0;
                 margin: 40px;
             }
             .index {
@@ -58,11 +59,20 @@
                 color: #808080;
                 font-size: 90%;
             }
-            .room {
+            .inputs {
+                display: flex;
+                flex-direction: row;
+            }
+            .inputs .col {
+                display: flex;
+                flex-direction: column;
+                margin-right: 6px;
+            }
+            .inputs input {
                 color: #ffffff;
-                font-size: 24pt;
+                font-size: 18pt;
                 font-weight: bold;
-                width: 500px;
+                width: 300px;
                 height: 50px;
                 background-color: #222222;
                 border-top: 1px solid #000000;
@@ -72,8 +82,8 @@
                 border-radius: 10px;
                 padding: 4px 16px 4px 16px;
             }
-            .room:hover,
-            .room:focus {
+            .inputs input:hover,
+            .inputs input:focus {
                 background-color: #111111;
                 outline: none;
             }
@@ -131,52 +141,74 @@
             .links .link.caller-receiver-content a:hover { background-color: #334455; }
             .links .link.caller-receiver-content a .id   { color:            #99bbdd; }
             .links .link.caller-receiver-content a .info { color:            #6688aa; }
+            .footer {
+                margin-top: 20px;
+                font-size: 70%;
+                color: #707070;
+                text-align: center;
+            }
+            .footer a {
+                color: #808080;
+            }
         </style>
     </head>
     <body>
         <div class="index">
-            <div class="title">VDON Call</div>
-            Room Name (alpha-numeric only):
-            <p/>
-            <input class="room" name="room" type="text" v-model="room"/>
+            <div class="inputs">
+                <div class="col">
+                    Unique Organisation Name:
+                    <p/>
+                    <input class="org" name="org" type="text" v-model="org"/>
+                </div>
+                <div class="col">
+                    Unique Room Name:
+                    <p/>
+                    <input class="room" name="room" type="text" v-model="room"/>
+                </div>
+            </div>
             <p/>
             Trampoline Links:
             <p/>
             <div class="links">
-                <div class="link director"><a v-bind:href="mkURL('director', 'D1', 'Director-1')"><span class="id">D1</span> Director <span class="info">(control)</span></a></div>
-                <div class="link director"><a v-bind:href="mkURL('director', 'D2', 'Director-2')"><span class="id">D2</span> Director <span class="info">(control)</span></a></div>
-                <div class="link production"><a v-bind:href="mkURL('production', 'A1', 'p2p')"><span class="id">A1</span> Production <span class="info">(sender, P2P)</span></a></div>
-                <div class="link production"><a v-bind:href="mkURL('production', 'A2', 'meshcast')"><span class="id">A2</span> Production <span class="info">(sender, Meshcast)</span></a></div>
+                <div class="link director"><a v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
+                <div class="link director"><a v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
+                <div class="link production"><a v-bind:href="mkURL('A1', 'p2p')"><span class="id">A1</span> Production-1 <span class="info">(sender, P2P)</span></a></div>
+                <div class="link production"><a v-bind:href="mkURL('A2', 'meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, Meshcast)</span></a></div>
             </div>
             <div class="links">
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C1', 'Caller-1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C2', 'Caller-2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C3', 'Caller-3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C4', 'Caller-4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C5', 'Caller-5')"><span class="id">C5</span> Caller-5 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C6', 'Caller-6')"><span class="id">C6</span> Caller-6 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C7', 'Caller-7')"><span class="id">C7</span> Caller-7 <span class="info">(sender)</span></a></div>
-                <div class="link caller-sender"><a v-bind:href="mkURL('sender', 'C8', 'Caller-8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C5')"><span class="id">C5</span> Caller-5 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C6')"><span class="id">C6</span> Caller-6 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C7')"><span class="id">C7</span> Caller-7 <span class="info">(sender)</span></a></div>
+                <div class="link caller-sender"><a v-bind:href="mkURL('C8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
             </div>
             <div class="links">
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C1', 'camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C2', 'camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C3', 'camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C4', 'camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C5', 'camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C6', 'camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C7', 'camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('receiver', 'C8', 'camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C1', 'camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C2', 'camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C3', 'camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C4', 'camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C5', 'camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C6', 'camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C7', 'camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C8', 'camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver camera)</span></a></div>
             </div>
             <div class="links">
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C1', 'content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C2', 'content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C3', 'content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C4', 'content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C5', 'content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C6', 'content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C7', 'content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('receiver', 'C8', 'content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C1', 'content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C2', 'content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C3', 'content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C4', 'content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C5', 'content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C6', 'content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C7', 'content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver content)</span></a></div>
+            </div>
+            <div class="footer">
+                <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.0.0 (2022-03-20),
+                Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
+                Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
             </div>
         </div>
     </body>
@@ -187,17 +219,18 @@
             const index = document.querySelector(".index")
             index.classList.add("visible")
             Vue.createApp({
-                data () { return { room: "" } },
+                data () { return { org: "", room: "" } },
                 methods: {
-                    mkURL (mode, id, label) {
+                    mkURL (id, label) {
+                        if (this.org === "")
+                            return ""
                         if (this.room === "")
                             return ""
-                        let url = `#/${this.room}/${mode}`
-                        if (id) {
-                            url += `/${id}`
-                            if (label)
-                                url += `/${label}`
-                        }
+                        const org  = this.org.replace(/\s+/g, "_")
+                        const room = this.room.replace(/\s+/g, "_")
+                        let url = `#/${org}/${room}/${id}`
+                        if (label)
+                            url += `/${label}`
                         return url
                     }
                 }
@@ -205,14 +238,24 @@
         }
         else {
             /*  parse URL hash string  */
-            let m = hash.match(/^#\/([^/]+)\/([^/]+)(?:\/([^/]+)(?:\/([^/]+))?)?$/)
-            if (m === null)
+            let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+)(?:\/([^/]+))?$/)
+            if (m === null) {
                 alert("ALERT: invalid parameters")
-            let [ , room, mode, id, label ] = m
-            if (id === undefined)
-                id = ""
-            if (label === undefined)
-                label = id
+                throw new Error("ALERT: invalid parameters")
+            }
+            let [ , org, room, id, label ] = m
+            if (!label)
+                label = ""
+
+            /*  derive 30-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
+            const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
+            const uuid = new UUID(5, ns, org + "/" + room)
+            const uuidA = uuid.export()
+            uuidA[1] ^= uuidA[0]
+            const roomId = uuidA.slice(1)
+                .map((x) => ("0" + x.toString(16)).substr(-2))
+                .join("")
+                .toUpperCase()
 
             /*  derive a display order from the id  */
             let order = 0
@@ -279,18 +322,18 @@
                   The total bitrate a guest in a room can view video streams with
                   Their combined bitrate total of all inbound video streams.  */
 
-            /*  determine VDO.Ninja parameters based on operation mode  */
+            /*  determine VDO.Ninja parameters based on operation mode (derived from the id)  */
             let config = {}
-            if (mode === "director") {
+            if ((m = id.match(/^D(\d+)$/)) !== null) {
                 /*
                  *  ==== DIRECTOR (room control) ====
                  */
                 config = {
-                    director:             room,
-                    codirector:           room,
+                    director:             roomId,
+                    codirector:           roomId,
                                           
                     push:                 id,
-                    label:                label,
+                    label:                `Director-${m[1]}`,
                     order:                300,
                                           
                     quality:              cameraVideoQuality,
@@ -328,17 +371,17 @@
                     orderby:              true
                 }
             }
-            else if (mode === "production") {
+            else if ((m = id.match(/^A(\d+)$/)) !== null) {
                 /*
                  *  ==== PRODUCTION (return feed ingest) ====
                  */
                 config = {
-                    room:                 room,
+                    room:                 roomId,
                                           
                     push:                 `${id}A`,
                     ssid:                 `${id}B`,
-                    label:                "Production (Program)",
-                    sslabel:              "Production (Content)",
+                    label:                `Production-${m[1]} (Program)`,
+                    sslabel:              `Production-${m[1]} (Content)`,
                     order:                200,
                                           
                     videodevice:          "vMix Video External 2",
@@ -397,17 +440,17 @@
                     autostart:            true
                 }                       
             }                           
-            else if (mode === "sender") {
+            else if ((m = id.match(/^C(\d+)$/)) !== null && !label.match(/^(?:camera|content)$/)) {
                 /*
                  *  ==== SENDER (caller sender-side) ====
                  */
                 config = {
-                    room:                 room,
+                    room:                 roomId,
                                           
                     push:                 `${id}A`,
                     ssid:                 `${id}B`,
-                    label:                label,
-                    sslabel:              `${label} (Content)`,
+                    label:                `Caller-${m[1]} (Camera)`,
+                    sslabel:              `Caller-${m[1]} (Content)`,
                     order:                order,
 
                     quality:              cameraVideoQuality,
@@ -459,12 +502,12 @@
                     autostart:            true
                 }
             }
-            else if (mode === "receiver") {
+            else if (id.match(/^C\d+$/) && label.match(/^(?:camera|content)$/)) {
                 /*
                  *  ==== RECEIVER (caller receiver-side) ====
                  */
                 config = {
-                    room:                 room,
+                    room:                 roomId,
                                           
                     view:                 (label === "camera" ? `${id}A` : `${id}B`),
                     scene:                true,
@@ -492,11 +535,12 @@
             }
 
             /*  derive VDO.Ninja URL and redirect to it  */
-            window.location.href = "https://vdo.ninja/?" + (
-                Object.keys(config).filter((key) => config[key] !== false).map((key) => {
-                    return typeof config[key] === "boolean" ? key : `${key}=${config[key]}`
-                }).join("&")
-            )
+            window.location.href =
+                "https://vdo.ninja/?" +
+                (Object.keys(config)
+                    .filter((key) => config[key] !== false)
+                    .map((key) => (typeof config[key] === "boolean" ? key : `${key}=${config[key]}`))
+                    .join("&"))
         }
     </script>
 </html>
