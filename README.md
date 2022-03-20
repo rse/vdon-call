@@ -33,9 +33,9 @@ ingest up to 8 callers with their camera and shared content (screen or
 window) into the video production and to provide a return feed from the
 video production back to the callers. The callers can hear but not see
 each other, except the provided return feed is some sort of multiview
-and shows all callers. This is intentional, as this is not a general
-conferencing solution, but just a way to ingest remote callers of a
-video production.
+and shows the callers. This is intentional, as this is not a general
+video conferencing solution, but just a way to ingest remote callers of a
+video production. Please keep this in mind.
 
 There are two particular bottlenecks in this approach, which are
 addressed by the particular VDO.Ninja parameterization:
@@ -53,31 +53,33 @@ addressed by the particular VDO.Ninja parameterization:
    connections available in Germany. As a result, the return feed uses
    1080p29.97 with a maximum bitrate of 3000 kbps.
 
-Prerequisites
--------------
-
-The solution requires the following software as a prerequisite:
-
-- [NDI Tools](https://www.ndi.tv/tools/)
-- [OBS Studio](https://obsproject.com/)
-- [OBS NDI](https://github.com/Palakis/obs-ndi/)
-
-The solution optionally requires a video mixing software like vMix or
-OBS Studio to consume and mix the NDI streams of the callers and feed a
-video device with the return feed for the callers.
-
 Installation
 ------------
 
-The solution technically consists of two parts:
+The solution consists of the following parts which have to be installed:
 
 1. [vdon-call.html](vdon-call.html): the URL trampoline, a
    small webpage which generates the heavily parameterized VDO.Ninja
    URLs. Install it as `index.html` to an arbitrary Internet service.
+   The page without any attached parameters is usually only used
+   by the video production crew to generate URLs. The page
+   with attached parameters is used by all VDON Call components
+   to expand the short URLs to the underlying VDO.Ninja URLs.
 
 2. [vdon-call/basic.ini](vdon-call/basic.ini) and
    [vdon-call.json](vdon-call.json): the OBS Studio profile and scene collection,
-   which configures OBS Studio as a WebRTC-to-NDI gateway.
+   which configures OBS Studio as a WebRTC-to-NDI gateway. For this to work,
+   you have to install the following prerequisites:
+
+   - [NDI Tools](https://www.ndi.tv/tools/)
+   - [OBS Studio](https://obsproject.com/)
+   - [OBS NDI](https://github.com/Palakis/obs-ndi/)
+
+3. The solution optionally requires a video mixing software like vMix or
+   OBS Studio to consume and mix the NDI streams of the callers and produce a
+   program which can act as the return feed to the callers. This really
+   has to run on a computer which is separate (but in the same LAN)
+   to the WebRTC-to-NDI gateway.
 
 Components
 ----------
