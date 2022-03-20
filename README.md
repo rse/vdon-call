@@ -1,6 +1,6 @@
 
-VDON Call (aka caller.studio)
-=============================
+VDON Call
+=========
   
 This is a [WebRTC](https://en.wikipedia.org/wiki/WebRTC)/[NDI](https://ndi.tv)-based
 remote caller ingest solution for video productions, based on
