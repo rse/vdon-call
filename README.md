@@ -2,22 +2,22 @@
 VDON Call
 =========
   
-This is a [WebRTC](https://en.wikipedia.org/wiki/WebRTC)/[NDI](https://ndi.tv)-based
+**VDON Call** is a [WebRTC](https://en.wikipedia.org/wiki/WebRTC)/[NDI](https://ndi.tv)-based
 remote caller ingest solution for video productions, based on
-two swiss army knifes in their field: the awesome, low-latency,
+the two swiss army knifes in their field: the awesome, low-latency,
 P2P-based video streaming facility [VDO.Ninja](https://vdo.ninja),
-and the awesome, ultra-flexible video mixer software
+and the awesome, ultra-flexible video mixing software
 [OBS Studio](https://obsproject.com). An instance of the
-corresponding URL trampoline of VDON Call is publically deployed under
-the central domain [caller.studio](https://caller.studio).
+corresponding URL trampoline of **VDON Call** is publically available under
+the meaningful name URL [caller.studio](https://caller.studio).
 
 Motivation
 ----------
 
-The name VDON Call of this solution is inspired by
+The name **VDON Call** of this solution is derived from
 [vMix Call](https://www.vmix.com/products/vmix-call.aspx), the great but
 weaker facility it can substitute in practice. The motivation and
-primary killer feature of VDON Call, in contrast to the otherwise also
+primary killer feature of **VDON Call**, in contrast to the otherwise also
 awesome vMix Call, is that the callers can ingest their camera and
 content in parallel without having to fiddle around with two independent
 Browser tabs and that this dual-ingest approach is available for 8
@@ -66,7 +66,7 @@ The solution consists of the following parts which have to be installed:
    URLs. Install it as `index.html` to an arbitrary Internet service.
    The page without any attached parameters is usually only used
    by the video production crew to generate URLs. The page
-   with attached parameters is used by all VDON Call components
+   with attached parameters is used by all **VDON Call** components
    to expand the short URLs to the underlying VDO.Ninja URLs.
 
 2. [obs-studio/basic.ini](obs-studio/basic.ini) and
@@ -113,7 +113,7 @@ The solution consists of the following logical parts:
 - **Caller (Receiver)**
 
   This is the heart of the solution, the caller receiver-side,
-  i.e., OBS Studio with the VDON Call profile and
+  i.e., OBS Studio with the **VDON Call** profile and
   scene collection loaded which accesses URLs like
   `https://caller.studio/#/example/example/C1/camera` and
   `https://caller.studio/#/example/example/C1/content`. For an
