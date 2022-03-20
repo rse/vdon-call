@@ -7,7 +7,8 @@ remote caller ingest solution for video productions, based on
 two swiss army knifes in their field: the awesome, low-latency,
 P2P-based video streaming facility [VDO.Ninja](https://vdo.ninja),
 and the awesome, ultra-flexible video mixer software
-[OBS Studio](https://obsproject.com).
+[OBS Studio](https://obsproject.com). A central instance of the
+corresponding URL trampoline is available under [caller.studio](https://caller.studio).
 
 Motivation
 ----------
