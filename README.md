@@ -28,7 +28,7 @@ software like vMix or OBS Studio.
 Constraints
 -----------
 
-The underlying VDO.Ninja parameterization is very opinionated and
+The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/vdon-call.html#L282) is very opinionated and
 heavily optimized for a total of 16+1 video streams, to allow one to
 ingest up to 8 callers with their camera and shared content (screen or
 window) into the video production and to provide a return feed from the
