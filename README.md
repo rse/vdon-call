@@ -12,12 +12,12 @@ and the awesome, ultra-flexible video mixing software
 [OBS Studio](https://obsproject.com). An instance of the landing page, the
 corresponding URL trampoline, of **VDON Call** is publically available
 under the meaningful name URL [caller.studio](https://caller.studio)
-(*"caller of the studio"*).
+(*caller of the studio*).
 
 Motivation
 ----------
 
-The name **VDON Call** is derived from
+The name **VDON Call** (spoken *ViDeO Ninja Call*) is derived from
 [vMix Call](https://www.vmix.com/products/vmix-call.aspx), the name of the
 great but weaker product **VDON Call** is intended to substitute in
 practice if necessary. The motivation and primary killer feature of
