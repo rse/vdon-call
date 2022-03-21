@@ -206,7 +206,7 @@
                 <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver content)</span></a></div>
             </div>
             <div class="footer">
-                <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.2.0 (2022-03-21),
+                <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.2.1 (2022-03-21),
                 Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                 Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
             </div>
@@ -398,8 +398,8 @@
                     sslabel:              `Production-${m[1]} (Content)`,
                     order:                200,
                                           
-                    videodevice:          (params.cam ? params.cam : "vMix Video External 2"),
-                    audiodevice:          (params.mic ? params.mic : "Line 2 (Virtual Audio Cable)"),
+                    videodevice:          (params.cam ? params.cam : "Standard"),
+                    audiodevice:          (params.mic ? params.mic : "Standard"),
                     outputdevice:         (params.spk ? params.spk : "Standard"),
                     novideo:              true,
                     noaudio:              true,
