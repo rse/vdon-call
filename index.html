@@ -398,9 +398,9 @@
                     sslabel:              `Production-${m[1]} (Content)`,
                     order:                200,
                                           
-                    videodevice:          "vMix Video External 2",
-                    audiodevice:          "Line 2 (Virtual Audio Cable)",
-                    outputdevice:         "Standard",
+                    videodevice:          (params.cam ? params.cam : "vMix Video External 2"),
+                    audiodevice:          (params.mic ? params.mic : "Line 2 (Virtual Audio Cable)"),
+                    outputdevice:         (params.spk ? params.spk : "Standard"),
                     novideo:              true,
                     noaudio:              true,
                     mutespeaker:          true,
