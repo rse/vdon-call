@@ -47,14 +47,14 @@ addressed by the particular VDO.Ninja parameterization:
    gateway and has to run on a medium gaming PC (Intel Core i7 11700KF,
    NVIDIA RTX 3070Ti, 32GB RAM) with just about a maximum of about 80%
    overall resource utilization. As a result, the callers camera use
-   720p24 and a bitrate of 2000 kbps and the callers content use 1080p6
-   and a bitrate of 3000 kbps.
+   720p24 and a bitrate of 2000 kbps with H.264 and the callers content
+   use 1080p6 and a bitrate of 3000 kbps with H.264.
 
 2. The production sender-side, providing the return feed of the video
    production back to the caller, should require no more than half of
    the uplink (50 mbps) and downlink (100 mbps) of the usual Internet
    connections available in Germany. As a result, the return feed uses
-   1080p29.97 with a maximum bitrate of 3000 kbps.
+   1080p29.97 and a bitrate of 3000 kbps with VP8.
 
 Installation
 ------------
