@@ -20,7 +20,7 @@ Motivation
 The name **VDON Call** (spoken *ViDeO Ninja Call*) is derived from
 [vMix Call](https://www.vmix.com/products/vmix-call.aspx), the name of the
 great but weaker product **VDON Call** is intended to substitute in
-practice if necessary. The motivation and primary killer feature of
+practice, if necessary. The motivation and primary killer feature of
 **VDON Call**, in contrast to the otherwise also awesome vMix Call,
 is that the callers can ingest their camera and content *in parallel*
 and without having to fiddle around with two independent Browser tabs
@@ -48,14 +48,18 @@ mind.
 There are two particular bottlenecks in this approach, which are
 addressed by the particular VDO.Ninja parameterization:
 
-1. The caller receiver-side is an OBS Studio, acting as a WebRTC-to-NDI
+1. **CALLER INGEST FEEDS**:
+   
+   The caller receiver-side is an OBS Studio, acting as a WebRTC-to-NDI
    gateway and has to run on a medium gaming PC (Intel Core i7 11700KF,
    NVIDIA RTX 3070Ti, 32GB RAM) with just about a maximum of about 80%
    overall resource utilization. As a result, the callers camera use
    720p24 and a bitrate of 2000 kbps with H.264 and the callers content
    use 1080p6 and a bitrate of 3000 kbps with H.264.
 
-2. The production sender-side, providing the return feed of the video
+2. **PRODUCTION RETURN FEED**:
+ 
+   The production sender-side, providing the return feed of the video
    production back to the caller, should require no more than half of
    the uplink (50 mbps) and downlink (100 mbps) of the usual Internet
    connections available in Germany. As a result, the return feed uses
