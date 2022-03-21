@@ -1,7 +1,7 @@
 
 VDON Call
 =========
-  
+
 **VDON Call** is a [WebRTC](https://en.wikipedia.org/wiki/WebRTC)/[NDI](https://ndi.tv)-based
 remote caller ingest solution for video productions, based on
 the two swiss army knifes in their field: the awesome, low-latency,
@@ -49,8 +49,8 @@ addressed by the particular VDO.Ninja parameterization:
    overall resource utilization. As a result, the callers camera use
    720p24 and a bitrate of 2000 kbps and the callers content use 1080p6
    and a bitrate of 3000 kbps.
-    
-2. The production sender-side, providing the return feed of the video 
+
+2. The production sender-side, providing the return feed of the video
    production back to the caller, should require no more than half of
    the uplink (50 mbps) and downlink (100 mbps) of the usual Internet
    connections available in Germany. As a result, the return feed uses
@@ -152,6 +152,10 @@ The solution consists of the following logical parts:
   callers via a companion Google Chrome instance accessing the URL
   `https://caller.studio/#/example/example/A1` or
   `https://caller.studio/#/example/example/A2?mode=meshcast`.
+  Similar to the `mode=meshcast`, you can attach the optional parameters
+  `cam` (camera device), `mic` (microphone device), and `spk` (speaker device)
+  to the URL. An example URL would be
+  `https://caller.studio/#/example/example/A1?cam=vMix Video External 2&mic=Line 2 (Virtual Audio Cable)"
 
   ![](shot-4-production.png)
 
