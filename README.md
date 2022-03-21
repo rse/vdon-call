@@ -9,38 +9,41 @@ remote caller ingest solution for live video productions, based on
 the two swiss army knifes in their field: the awesome, low-latency,
 P2P-based video streaming facility [VDO.Ninja](https://vdo.ninja),
 and the awesome, ultra-flexible video mixing software
-[OBS Studio](https://obsproject.com). An instance of the
-landing page, the corresponding URL trampoline, of **VDON Call** is publically
-available under the meaningful name URL [caller.studio](https://caller.studio) ("caller of the studio").
+[OBS Studio](https://obsproject.com). An instance of the landing page, the
+corresponding URL trampoline, of **VDON Call** is publically available
+under the meaningful name URL [caller.studio](https://caller.studio)
+(*"caller of the studio"*).
 
 Motivation
 ----------
 
-The name **VDON Call** is derived from the product
-[vMix Call](https://www.vmix.com/products/vmix-call.aspx), the great but
-weaker facility it can substitute in practice. The motivation and
-primary killer feature of **VDON Call**, in contrast to the otherwise also
-awesome vMix Call, is that the callers can ingest their camera and
-content *in parallel* and without having to fiddle around with two independent
-Browser tabs and that this dual-ingest approach is available for 8
-callers in total instead of just 4 (because vMix Call supports a
-maximum of 8 incoming video streams only). The resulting ingested video
-streams are available as NDI streams on the local network and can be
-easily consumed (usually on a separate computer) with a video mixing
-software like vMix or OBS Studio.
+The name **VDON Call** is derived from
+[vMix Call](https://www.vmix.com/products/vmix-call.aspx), the name of the
+great but weaker product **VDON Call** is intended to substitute in
+practice if necessary. The motivation and primary killer feature of
+**VDON Call**, in contrast to the otherwise also awesome vMix Call,
+is that the callers can ingest their camera and content *in parallel*
+and without having to fiddle around with two independent Browser tabs
+and that this dual-ingest approach is available for 8 callers in total
+instead of just 4 (because vMix Call supports a maximum of 8 incoming
+video streams only). The resulting ingested video streams are available
+as NDI streams on the local network and can be easily consumed (usually
+on a separate computer) with a video mixing software like vMix or OBS
+Studio.
 
 Constraints
 -----------
 
-The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/index.html#L368) is very opinionated and
-heavily optimized for a total of 16+1 video streams, to allow one to
-ingest up to 8 callers with their camera and shared content (screen or
-window) into the video production and to provide a return feed from the
-video production back to the callers. The callers can hear but not see
-each other, except the provided return feed is some sort of multiview
-and shows the callers. This is intentional, as this is not a general
-video conferencing solution, but a dedicated way to ingest remote
-video callers of a production. Please keep this in mind.
+The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/index.html#L368)
+is very opinionated and heavily optimized for a total of 16+1 video
+streams, to allow one to ingest up to 8 callers with their camera and
+shared content (screen or window) into the video production and to
+provide a return feed from the video production back to the callers. The
+callers can hear but not see each other, except the provided return feed
+is some sort of multiview and shows the callers. This is intentional,
+as this is not a general video conferencing solution, but a dedicated
+way to ingest remote video callers of a production. Please keep this in
+mind.
 
 There are two particular bottlenecks in this approach, which are
 addressed by the particular VDO.Ninja parameterization:
