@@ -130,8 +130,8 @@ The solution consists of the following logical parts:
   This is the heart of the solution, the caller receiver-side,
   i.e., OBS Studio with the **VDON Call** profile and
   scene collection loaded which accesses URLs like
-  `https://caller.studio/#/example/example/C1/camera` and
-  `https://caller.studio/#/example/example/C1/content`. For an
+  `https://caller.studio/#/example/example/C1?stream=camera` and
+  `https://caller.studio/#/example/example/C1?stream=content`. For an
   overview, a special multiview scene is in preview (and also exposed
   via NDI for inclusion into the multiview of the production -- see
   below).
@@ -150,7 +150,8 @@ The solution consists of the following logical parts:
   program video stream and the clock. Either the program or (as
   shown shere) the multiview video stream is then send back to the
   callers via a companion Google Chrome instance accessing the URL
-  `https://caller.studio/#/example/example/A1/p2p`.
+  `https://caller.studio/#/example/example/A1` or
+  `https://caller.studio/#/example/example/A2?mode=meshcast`.
 
   ![](shot-4-production.png)
 

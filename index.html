@@ -172,8 +172,8 @@
             <div class="links">
                 <div class="link director"><a v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
                 <div class="link director"><a v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
-                <div class="link production"><a v-bind:href="mkURL('A1', 'p2p')"><span class="id">A1</span> Production-1 <span class="info">(sender, P2P)</span></a></div>
-                <div class="link production"><a v-bind:href="mkURL('A2', 'meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, Meshcast)</span></a></div>
+                <div class="link production"><a v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender, P2P)</span></a></div>
+                <div class="link production"><a v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, Meshcast)</span></a></div>
             </div>
             <div class="links">
                 <div class="link caller-sender"><a v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
@@ -186,24 +186,24 @@
                 <div class="link caller-sender"><a v-bind:href="mkURL('C8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
             </div>
             <div class="links">
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C1', 'camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C2', 'camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C3', 'camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C4', 'camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C5', 'camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C6', 'camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C7', 'camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver camera)</span></a></div>
-                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C8', 'camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C1', 'stream=camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C2', 'stream=camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C3', 'stream=camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C4', 'stream=camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C5', 'stream=camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C6', 'stream=camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C7', 'stream=camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver camera)</span></a></div>
+                <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C8', 'stream=camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver camera)</span></a></div>
             </div>
             <div class="links">
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C1', 'content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C2', 'content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C3', 'content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C4', 'content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C5', 'content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C6', 'content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C7', 'content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver content)</span></a></div>
-                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C1', 'stream=content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C2', 'stream=content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C3', 'stream=content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C4', 'stream=content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C5', 'stream=content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C6', 'stream=content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C7', 'stream=content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver content)</span></a></div>
+                <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver content)</span></a></div>
             </div>
             <div class="footer">
                 <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.1.0 (2022-03-21),
@@ -221,7 +221,7 @@
             Vue.createApp({
                 data () { return { org: "", room: "" } },
                 methods: {
-                    mkURL (id, label) {
+                    mkURL (id, params) {
                         if (this.org === "")
                             return ""
                         if (this.room === "")
@@ -229,8 +229,8 @@
                         const org  = this.org.replace(/\s+/g, "_")
                         const room = this.room.replace(/\s+/g, "_")
                         let url = `#/${org}/${room}/${id}`
-                        if (label)
-                            url += `/${label}`
+                        if (params)
+                            url += `?${params}`
                         return url
                     }
                 }
@@ -238,14 +238,28 @@
         }
         else {
             /*  parse URL hash string  */
-            let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+)(?:\/([^/]+))?$/)
+            let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+?)(?:\?(.*))?$/)
             if (m === null) {
                 alert("ALERT: invalid parameters")
                 throw new Error("ALERT: invalid parameters")
             }
-            let [ , org, room, id, label ] = m
-            if (!label)
-                label = ""
+            let [ , org, room, id, paramsS ] = m
+            if (!paramsS)
+                paramsS = ""
+
+            /*  parse optional parameters  */
+            console.log(paramsS)
+            const params = {}
+            const paramsA = paramsS.split("&")
+            for (const param of paramsA) {
+                let m
+                if ((m = param.match(/^(.+)=(.+)$/)) !== null)
+                    params[m[1]] = m[2]
+                else if ((m = param.match(/^no(.+)$/)) !== null)
+                    params[m[1]] = false
+                else if (param !== "")
+                    params[param] = true
+            }
 
             /*  derive 30-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
             const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
@@ -406,7 +420,7 @@
                     totalroombitrate:     2 * (programVideoKBPS + programAudioKBPS),
                     limittotalbitrate:    2 * (programVideoKBPS + programAudioKBPS) * (callersMax + 1),
 
-                    ...(label === "meshcast" ? {
+                    ...(params.mode === "meshcast" ? {
                     meshcast:             true,
                     meshcastcodec:        videoCodec,
                     meshcastbitrate:      programVideoKBPS,
@@ -440,7 +454,7 @@
                     margin:               10
                 }                       
             }                           
-            else if ((m = id.match(/^C(\d+)$/)) !== null && !label.match(/^(?:camera|content)$/)) {
+            else if ((m = id.match(/^C(\d+)$/)) !== null && !params.stream) {
                 /*
                  *  ==== SENDER (caller sender-side) ====
                  */
@@ -502,18 +516,18 @@
                     autostart:            true
                 }
             }
-            else if (id.match(/^C\d+$/) && label.match(/^(?:camera|content)$/)) {
+            else if (id.match(/^C\d+$/) && typeof params.stream === "string" && params.stream.match(/^(?:camera|content)$/)) {
                 /*
                  *  ==== RECEIVER (caller receiver-side) ====
                  */
                 config = {
                     room:                 roomId,
                                           
-                    view:                 (label === "camera" ? `${id}A` : `${id}B`),
+                    view:                 (params.stream === "camera" ? `${id}A` : `${id}B`),
                     scene:                true,
                                           
-                    quality:              (label === "camera" ? cameraVideoQuality : contentVideoQuality),
-                    framerate:            (label === "camera" ? cameraVideoFPS     : contentVideoFPS    ),
+                    quality:              (params.stream === "camera" ? cameraVideoQuality : contentVideoQuality),
+                    framerate:            (params.stream === "camera" ? cameraVideoFPS     : contentVideoFPS    ),
                                           
                     videobitrate:         cameraVideoKBPS,
                     zoomedbitrate:        cameraVideoKBPS,
