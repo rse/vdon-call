@@ -363,39 +363,39 @@
                 config = {
                     director:             roomId,
                     codirector:           roomId,
-                                          
+
                     push:                 `${roomId}_${id}A`,
                     ssid:                 `${roomId}_${id}B`,
                     label:                `Director-${m[1]}`,
                     sslabel:              `Director-${m[1]} (Content)`,
                     order:                300,
-                                          
+
                     quality:              cameraVideoQuality,
                     framerate:            cameraVideoFPS,
-                                          
+
                     codec:                "vp8",
                     videobitrate:         cameraVideoKBPS,
                     zoomedbitrate:        cameraVideoKBPS,
                     audiobitrate:         cameraAudioKBPS,
-                                          
+
                     roombitrate:          cameraVideoKBPS + cameraAudioKBPS,
                     totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
                     limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
-                                          
+
                     stereo:               1,
                     aec:                  1,
                     ag:                   0,
                     dn:                   1,
                     lowcut:               80,
-                                          
+
                     novideo:              true,
                     noaudio:              true,
-                                          
+
                     videodevice:          0,
                     audiodevice:          0,
                     mute:                 true,
                     mutespeaker:          true,
-                                          
+
                     darkmode:             true,
                     noheader:             true,
                     nofileshare:          true,
@@ -411,31 +411,31 @@
                  */
                 config = {
                     room:                 roomId,
-                                          
+
                     push:                 `${roomId}_${id}A`,
                     ssid:                 `${roomId}_${id}B`,
                     label:                `Production-${m[1]}`,
                     sslabel:              `Production-${m[1]} (Content)`,
                     order:                200,
-                                          
+
                     videodevice:          (params.cam ? params.cam : "Standard"),
                     audiodevice:          (params.mic ? params.mic : "Standard"),
                     outputdevice:         (params.spk ? params.spk : "Standard"),
                     novideo:              true,
                     noaudio:              true,
                     mutespeaker:          true,
-                                          
+
                     quality:              programVideoQuality,
                     framerate:            programVideoFPS,
-                                          
+
                     ssq:                  programVideoQuality,
                     ssfps:                programVideoFPS,
-                                          
+
                     videobitrate:         programVideoKBPS,
                     zoomedbitrate:        programVideoKBPS,
                     codec:                "vp8",
                     audiobitrate:         programAudioKBPS,
-                                          
+
                     roombitrate:          (programVideoKBPS + programAudioKBPS),
                     totalroombitrate:     2 * (programVideoKBPS + programAudioKBPS),
                     limittotalbitrate:    2 * (programVideoKBPS + programAudioKBPS) * (callersMax + 1),
@@ -448,21 +448,21 @@
                     mcscreensharecodec:   "vp8",
                     mcscreensharebitrate: programVideoKBPS
                     } : {}),
-                                          
+
                     stereo:               1,
                     aec:                  0,
                     ag:                   0,
                     dn:                   0,
                     ssdn:                 0,
-                                          
+
                     showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
-                    noheader:             true,    
-                    preview:              true,    
+                    noheader:             true,
+                    preview:              true,
                     style:                1,
                     showlabels:           "teams",
                     fontsize:             "30pt",
-                                          
-                    darkmode:             true,     
+
+                    darkmode:             true,
                     nowebsite:            true,
                     novideocontrol:       true,
                     nofileshare:          true,
@@ -471,15 +471,15 @@
                     ssb:                  true,
                     autostart:            true,
                     margin:               10
-                }                       
-            }                           
+                }
+            }
             else if ((m = id.match(/^C(\d+)$/)) !== null && !params.stream) {
                 /*
                  *  ==== SENDER (caller sender-side) ====
                  */
                 config = {
                     room:                 roomId,
-                                          
+
                     push:                 `${roomId}_${id}A`,
                     ssid:                 `${roomId}_${id}B`,
                     label:                `Caller-${m[1]}`,
@@ -488,17 +488,17 @@
 
                     quality:              cameraVideoQuality,
                     maxframerate:         cameraVideoFPS,
-                    noscale:              true,   
+                    noscale:              true,
                     mediasettings:        true,
-                                          
+
                     ssq:                  contentVideoQuality,
                     ssfps:                contentVideoFPS,
-                                          
+
                     videobitrate:         cameraVideoKBPS,
                     zoomedbitrate:        cameraVideoKBPS,
                     codec:                "vp8",
                     audiobitrate:         cameraAudioKBPS,
-                                          
+
                     roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
                     totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
                     limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
@@ -506,22 +506,22 @@
                     ...(params.cam ? { videodevice:  params.cam } : {}),
                     ...(params.mic ? { audiodevice:  params.mic } : {}),
                     ...(params.spk ? { outputdevice: params.spk } : {}),
-                                          
+
                     stereo:               1,
                     aec:                  1,
                     ag:                   1,
                     dn:                   1,
                     lowcut:               80,
-                    compressor:           true,      
+                    compressor:           true,
                     ssdn:                 0,
-                                          
+
                     showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
                     noheader:             true,
                     preview:              true,
                     style:                1,
                     showlabels:           "teams",
                     fontsize:             "24pt",
-                                          
+
                     darkmode:             true,
                     nowebsite:            true,
                     novideocontrol:       true,
@@ -543,13 +543,13 @@
                  */
                 config = {
                     room:                 roomId,
-                                          
+
                     view:                 (params.stream === "camera" ? `${roomId}_${id}A` : `${roomId}_${id}B`),
                     scene:                true,
-                                          
+
                     quality:              (params.stream === "camera" ? cameraVideoQuality : contentVideoQuality),
                     framerate:            (params.stream === "camera" ? cameraVideoFPS     : contentVideoFPS    ),
-                                          
+
                     videobitrate:         cameraVideoKBPS,
                     zoomedbitrate:        cameraVideoKBPS,
                     audiobitrate:         cameraAudioKBPS,
