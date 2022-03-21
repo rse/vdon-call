@@ -472,7 +472,6 @@
                     tallyoff:             true,
                     webcam:               true,
                     ssb:                  true,
-                    autohide:             true,
                     autostart:            true,
                     margin:               10
                 }                       
@@ -538,9 +537,7 @@
                     webcam:               true,
                     ssb:                  true,
                     effects:              true,
-                    margin:               10,
-                                          
-                    autostart:            true
+                    margin:               10
                 }
             }
             else if (id.match(/^C\d+$/) && typeof params.stream === "string" && params.stream.match(/^(?:camera|content)$/)) {
