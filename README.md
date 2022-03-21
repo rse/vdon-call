@@ -1,4 +1,6 @@
 
+<img src="https://rawgit.com/rse/vdon-call/master/vdon-call-logo.svg" width="200" align="right" alt=""/>
+
 VDON Call
 =========
 
