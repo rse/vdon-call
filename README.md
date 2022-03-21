@@ -134,7 +134,10 @@ The solution consists of the following logical parts:
   `https://caller.studio/#/example/example/C1?stream=content`. For an
   overview, a special multiview scene is in preview (and also exposed
   via NDI for inclusion into the multiview of the production -- see
-  below).
+  below). You can attach the optional parameters
+  `cam` (camera device), `mic` (microphone device), and `spk` (speaker device)
+  to the URL. An example URL would be
+  `https://caller.studio/#/example/example/C1?cam=Standard&mic=Standard"
 
   ![](shot-3-caller-receiver.png)
 
