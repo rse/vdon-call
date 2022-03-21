@@ -518,6 +518,8 @@
                     ...(params.mic ? { audiodevice:  params.mic } : {}),
                     ...(params.spk ? { outputdevice: params.spk } : {}),
 
+                    ...(params.lang ? { ln: params.lang } : {}),
+
                     stereo:               1,
                     aec:                  1,
                     ag:                   1,

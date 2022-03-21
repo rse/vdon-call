@@ -152,9 +152,9 @@ The solution consists of the following logical parts under run-time:
   overview, a special multiview scene is in preview (and also exposed
   via NDI for inclusion into the multiview of the production -- see
   below). You can attach the optional parameters
-  `cam` (camera device), `mic` (microphone device), and `spk` (speaker device)
-  to the URL. An example URL would be
-  `https://caller.studio/#/example/example/C1?cam=Standard&mic=Standard"
+  `cam` (camera device), `mic` (microphone device), `spk` (speaker device),
+  and `lang` (ISO code for UI language) to the URL. An example URL would be
+  `https://caller.studio/#/example/example/C1?cam=Standard&mic=Standard&lang=de"
 
   ![](shot-3-caller-receiver.png)
 
