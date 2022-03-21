@@ -280,12 +280,14 @@
                     params[param] = true
             }
 
-            /*  derive 30-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
+            /*  derive 26-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
             const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
             const uuid = new UUID(5, ns, org + "/" + room)
             const uuidA = uuid.export()
-            uuidA[1] ^= uuidA[0]
-            const roomId = uuidA.slice(1)
+            uuidA[3] ^= uuidA[0]
+            uuidA[4] ^= uuidA[1]
+            uuidA[5] ^= uuidA[2]
+            const roomId = uuidA.slice(3)
                 .map((x) => ("0" + x.toString(16)).substr(-2))
                 .join("")
                 .toUpperCase()
@@ -365,8 +367,8 @@
                     director:             roomId,
                     codirector:           roomId,
                                           
-                    push:                 `${id}A`,
-                    ssid:                 `${id}B`,
+                    push:                 `${roomId}_${id}A`,
+                    ssid:                 `${roomId}_${id}B`,
                     label:                `Director-${m[1]}`,
                     sslabel:              `Director-${m[1]} (Content)`,
                     order:                300,
@@ -413,8 +415,8 @@
                 config = {
                     room:                 roomId,
                                           
-                    push:                 `${id}A`,
-                    ssid:                 `${id}B`,
+                    push:                 `${roomId}_${id}A`,
+                    ssid:                 `${roomId}_${id}B`,
                     label:                `Production-${m[1]} (Program)`,
                     sslabel:              `Production-${m[1]} (Content)`,
                     order:                200,
@@ -456,7 +458,7 @@
                     dn:                   0,
                     ssdn:                 0,
                                           
-                    showonly:             "A1A,A1B,A2A,A2B",
+                    showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
                     noheader:             true,    
                     preview:              true,    
                     style:                1,
@@ -482,8 +484,8 @@
                 config = {
                     room:                 roomId,
                                           
-                    push:                 `${id}A`,
-                    ssid:                 `${id}B`,
+                    push:                 `${roomId}_${id}A`,
+                    ssid:                 `${roomId}_${id}B`,
                     label:                `Caller-${m[1]} (Camera)`,
                     sslabel:              `Caller-${m[1]} (Content)`,
                     order:                order,
@@ -517,7 +519,7 @@
                     compressor:           true,      
                     ssdn:                 0,
                                           
-                    showonly:             "A1A,A1B,A2A,A2B",
+                    showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
                     noheader:             true,
                     preview:              true,
                     style:                1,
@@ -548,7 +550,7 @@
                 config = {
                     room:                 roomId,
                                           
-                    view:                 (params.stream === "camera" ? `${id}A` : `${id}B`),
+                    view:                 (params.stream === "camera" ? `${roomId}_${id}A` : `${roomId}_${id}B`),
                     scene:                true,
                                           
                     quality:              (params.stream === "camera" ? cameraVideoQuality : contentVideoQuality),
