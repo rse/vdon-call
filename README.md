@@ -197,31 +197,35 @@ Design Cruxes
 
 The design of **VDON Call** is based on the following cruxes:
 
-- The *Caller Ingest Feeds* use the video codec H.264, reduced
+- **OPTIMIZED VIDEO ENCODINGS**:
+  The *Caller Ingest Feeds* use the video codec H.264, reduced
   resolutions (720p and 1080p), and reduced framerates (24 and 6) to
   allow the WebRTC-to-NDI gateway to cope with the decoding of 16 video
-  streams and the re-encoding of 16+1 video streams.
+  streams and the re-encoding of 16+1 video streams. In contrast to
+  this, the *Production Return Feed* uses the video codec VP8 as it
+  provides better overall quality (H.264 on smaller sizes regularly
+  degrades the video stream to be greyed or washed out).
 
-- The *Production Return Feed* uses the video codec VP8 as it
-  provides better overall quality (H.264 on smaller sizes
-  regularly degrades the video stream to be greyed or washed out).
-
-- The *Director* mode in VDO.Ninja is forced to not use any video
+- **MINIMUM TOTAL VIDEO STREAMS**:
+  The *Director* mode in VDO.Ninja is forced to not use any video
   or audio at all, to reduce the minimum number of total video streams
   in the room and especially reduce the load on the callers as good
   as possible.
 
-- The *Caller* mode in VDO.Ninja is forced to be as simple as
+- **REDUCED USER INTERFAC CLUTTER:**
+  The *Caller* mode in VDO.Ninja is forced to be as simple as
   possible from a user interface perspective (many features are
   intentionally disabled) to not confuse the callers as good as
   possible.
 
-- The *Caller URLs* use the meaningful "caller.studio" domain and
+- **SIMPLE AND INTUITIVE URLS:**
+  The *Caller URLs* use the meaningful "caller.studio" domain and
   are reduced to the absolute minimum of the required information.
   All technical aspects of the underlying VDO.Ninja facility are
   hidden and are provided on-the-fly by expanding the URLs internally.
 
-- The VDO.Ninja room identifiers and stream identifiers are based
+- **NAMESPACE CONFLICT AVOIDANCE:**
+  The VDO.Ninja room identifiers and stream identifiers are based
   on the hashing of an organization and room name. This way **VDON
   Call** does not "trash" the namespace of VDO.Ninja too much and is
   less likely in conflict with regular VDO.Ninja uses.
