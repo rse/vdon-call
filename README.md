@@ -168,7 +168,10 @@ The solution consists of the following logical parts:
   view, i.e., Google Chrome accessing the URL
   `https://caller.studio/#/example/example/D1`
   where the production crew can send messages to the callers, adjust the
-  parameters of the callers, etc.
+  parameters of the callers, etc. The director view intentionally has
+  all incoming video/audio feeds disabled and also does not send an own
+  outgoing video/audio feed to not cause any additional network traffic
+  on the callers.
 
   ![](shot-5-director.png)
 
