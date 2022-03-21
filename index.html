@@ -485,6 +485,10 @@
                     roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
                     totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
                     limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
+
+                    ...(params.cam ? { videodevice:  params.cam } : {}),
+                    ...(params.mic ? { audiodevice:  params.mic } : {}),
+                    ...(params.spk ? { outputdevice: params.spk } : {}),
                                           
                     stereo:               1,
                     aec:                  1,
