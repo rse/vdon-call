@@ -11,7 +11,7 @@ P2P-based video streaming facility [VDO.Ninja](https://vdo.ninja),
 and the awesome, ultra-flexible video mixing software
 [OBS Studio](https://obsproject.com). An instance of the
 landing page, the corresponding URL trampoline, of **VDON Call** is publically
-available under the meaningful name URL [caller.studio](https://caller.studio).
+available under the meaningful name URL [caller.studio](https://caller.studio) ("caller of the studio").
 
 Motivation
 ----------
