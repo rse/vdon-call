@@ -1,5 +1,5 @@
 
-<img src="https://rawgit.com/rse/vdon-call/master/vdon-call-logo.svg" width="200" align="right" alt=""/>
+<img src="https://cdn.jsdelivr.net/gh/rse/vdon-call@master/vdon-call-logo.svg" width="200" align="right" alt=""/>
 
 VDON Call
 =========
