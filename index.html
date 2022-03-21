@@ -156,18 +156,18 @@
         <div class="index">
             <div class="inputs">
                 <div class="col">
-                    Unique Organisation Name:
+                    <span class="label"><b>Organisation</b> &nbsp; (unique globally):</span>
                     <p/>
                     <input class="org" name="org" type="text" v-model="org"/>
                 </div>
                 <div class="col">
-                    Unique Room Name:
+                    <span class="label"><b>Room</b> &nbsp; (unique per organisation):</span>
                     <p/>
                     <input class="room" name="room" type="text" v-model="room"/>
                 </div>
             </div>
             <p/>
-            Trampoline Links:
+            <span class="label"><b>Trampoline Links</b> &nbsp; (generated per Organisation and Room):</span>
             <p/>
             <div class="links">
                 <div class="link director"><a v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
