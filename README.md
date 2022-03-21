@@ -3,25 +3,25 @@ VDON Call
 =========
 
 **VDON Call** is a [WebRTC](https://en.wikipedia.org/wiki/WebRTC)/[NDI](https://ndi.tv)-based
-remote caller ingest solution for video productions, based on
+remote caller ingest solution for live video productions, based on
 the two swiss army knifes in their field: the awesome, low-latency,
 P2P-based video streaming facility [VDO.Ninja](https://vdo.ninja),
 and the awesome, ultra-flexible video mixing software
 [OBS Studio](https://obsproject.com). An instance of the
-corresponding URL trampoline of **VDON Call** is publically available under
-the meaningful name URL [caller.studio](https://caller.studio).
+landing page, the corresponding URL trampoline, of **VDON Call** is publically
+available under the meaningful name URL [caller.studio](https://caller.studio).
 
 Motivation
 ----------
 
-The name **VDON Call** of this solution is derived from
+The name **VDON Call** is derived from the product
 [vMix Call](https://www.vmix.com/products/vmix-call.aspx), the great but
 weaker facility it can substitute in practice. The motivation and
 primary killer feature of **VDON Call**, in contrast to the otherwise also
 awesome vMix Call, is that the callers can ingest their camera and
-content in parallel without having to fiddle around with two independent
+content *in parallel* and without having to fiddle around with two independent
 Browser tabs and that this dual-ingest approach is available for 8
-callers in total instead of just 4 (notice that vMix Call supports a
+callers in total instead of just 4 (because vMix Call supports a
 maximum of 8 incoming video streams only). The resulting ingested video
 streams are available as NDI streams on the local network and can be
 easily consumed (usually on a separate computer) with a video mixing
@@ -30,15 +30,15 @@ software like vMix or OBS Studio.
 Constraints
 -----------
 
-The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/index.html#L313) is very opinionated and
+The [underlying VDO.Ninja parameterization](https://github.com/rse/vdon-call/blob/master/index.html#L368) is very opinionated and
 heavily optimized for a total of 16+1 video streams, to allow one to
 ingest up to 8 callers with their camera and shared content (screen or
 window) into the video production and to provide a return feed from the
 video production back to the callers. The callers can hear but not see
 each other, except the provided return feed is some sort of multiview
 and shows the callers. This is intentional, as this is not a general
-video conferencing solution, but just a way to ingest remote callers of a
-video production. Please keep this in mind.
+video conferencing solution, but a dedicated way to ingest remote
+video callers of a production. Please keep this in mind.
 
 There are two particular bottlenecks in this approach, which are
 addressed by the particular VDO.Ninja parameterization:
@@ -61,22 +61,26 @@ Installation
 
 The solution consists of the following parts which have to be installed:
 
-1. [index.html](index.html): the URL trampoline, a
+1. **URL TRAMPOLINE:**
+
+   This is just the file [index.html](index.html), which acts as a URL trampoline, a
    tiny webpage which generates the underlying, heavily parameterized VDO.Ninja
    URLs. Install it as `index.html` to an arbitrary Internet service.
    The page without any attached parameters is usually only used
    by the video production crew to generate URLs. The page
    with attached parameters is used by all **VDON Call** components
-   to expand the short URLs to the underlying VDO.Ninja URLs.
+   (see below) to expand the short URLs to the underlying VDO.Ninja URLs.
    For convenience reasons, an instance of this URL trampoline
-   is publically available under the meaningful name URL
+   is publically available under the meaningful URL
    [caller.studio](https://caller.studio).
 
-2. [obs-studio/basic.ini](obs-studio/basic.ini),
+2. **WEBRTC-TO-NDI GATEWAY:**
+
+   This is an OBS Studio instance, driven by the files [obs-studio/basic.ini](obs-studio/basic.ini),
    [obs-studio.json](obs-studio.json) and
-   [obs-studio.lua](obs-studio.lua):
-   the OBS Studio profile, scene collection and configuration update script,
-   which configures OBS Studio as a WebRTC-to-NDI gateway. For this to work,
+   [obs-studio.lua](obs-studio.lua).
+   These are the OBS Studio profile, scene collection and configuration update script,
+   which establish OBS Studio as a WebRTC-to-NDI gateway. For this to work,
    you have to locally install the following prerequisites:
 
    - [NDI Tools](https://www.ndi.tv/tools/)
@@ -93,16 +97,19 @@ The solution consists of the following parts which have to be installed:
    `obs-studio.lua` to update all browser sources in OBS Studio with
    your URL trampoline information.
 
-3. The solution optionally requires a video mixing software like vMix or
-   OBS Studio to consume and mix the NDI streams of the callers and produce a
-   program which can act as the return feed to the callers. This really
-   has to run on a computer which is separate (but in the same LAN)
-   to the WebRTC-to-NDI gateway.
+3. **VIDEO PRODUCTION:**
+
+   This is the actual video production which requires a video mixing
+   software like vMix or OBS Studio to consume and mix the NDI streams
+   of the callers and produce a "program" (aka output) which can act
+   as the return feed video stream to the callers. This really has to
+   run on a computer which is separate (but in the same LAN) to the
+   WebRTC-to-NDI gateway.
 
 Components
 ----------
 
-The solution consists of the following logical parts:
+The solution consists of the following logical parts under run-time:
 
 - **URL Trampoline**
 
@@ -179,7 +186,7 @@ The solution consists of the following logical parts:
 See Also
 --------
 
-This solution was announced in the following communities:
+This solution was announced 2022/03 in the following communities:
 
 - [Reddit: VDO.Ninja](https://www.reddit.com/r/VDONinja/comments/ti8jz4/vdon_call_remote_caller_ingest_via_vdoninja_to/)
 - [Reddit: OBS Studio](https://www.reddit.com/r/obs/comments/tihbxz/vdon_call_external_ndibased_remote_caller_ingest/)
