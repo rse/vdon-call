@@ -108,7 +108,8 @@ The solution consists of the following logical parts:
 
   This is the URL trampoline which is deployed to a publically reachable
   URL like `https://caller.studio`, and which can be used by the
-  production crew to easily generate the required "short" URLs. Its
+  production crew to easily generate the required "short" URLs based
+  on unique organisation name and a room name (unique per organisation). Its
   trampoline functionality on access of these "short" URLs expand to the
   underlying, technical, heavily-parameterized VDO.Ninja URLs.
 
