@@ -231,6 +231,13 @@ The design of **VDON Call** is based on the following cruxes:
   Call** does not "trash" the namespace of VDO.Ninja too much and is
   less likely in conflict with regular VDO.Ninja uses.
 
+- **USER INTERFACE STYLING:**
+  The VDO.Ninja user interface, especially the entry page for selecting
+  devices and the chat module, in dark mode and by default look rather
+  unpolished. For an improved user acceptance, the appearance of the
+  user interface of VDO.Ninja is improved with a VDON Call specific
+  style.
+
 See Also
 --------
 
