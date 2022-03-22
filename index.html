@@ -582,6 +582,10 @@
                 }
             }
 
+            /*  apply custom theme  */
+            config.css = encodeURIComponent(window.location.href
+                .replace(/#.*$/, "").replace(/\/[^/]+$/, "") + "/vdon.css")
+
             /*  derive VDO.Ninja URL and redirect to it  */
             window.location.href =
                 "https://vdo.ninja/?" +

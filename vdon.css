@@ -1,0 +1,108 @@
+/*
+**  VDON Call ~ VDO.Ninja Remote Caller Ingest
+**  Copyright (c) 2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Licensed under MIT license <https://spdx.org/licenses/MIT>
+*/
+
+body.darktheme #add_camera {
+    display: none;
+}
+body.darktheme .card {
+    background-color: #02050c;
+}
+body.darktheme .container-inner {
+    background-color: #02050c;
+}
+
+body.darktheme .gowebcam {
+    border: 1px solid #cc3333;
+    background-color: #990000;
+    border-radius: 4px;
+    color: #ffffff;
+}
+body.darktheme .gowebcam:enabled {
+    border: 1px solid #6699cc;
+    background-color: #336699 !important;
+    color: #f0f0ff;
+}
+body.darktheme .gowebcam {
+    filter: none;
+}
+
+body.darktheme .videoMenu {
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+body.darktheme #videoSourceSelect {
+    background-color: #444444;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+}
+body.darktheme #videoSourceSelect:focus {
+    outline: none;
+}
+
+body.darktheme #audioMenu {
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+body.darktheme .audioTitle {
+    color: #ffffff;
+}
+body.darktheme .audioTitle:hover {
+    color: #ffffff;
+}
+body.darktheme #audioSource {
+    background-color: #444444;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+}
+body.darktheme #audioSource label {
+    color: #ffffff;
+}
+body.darktheme #audioSource:focus {
+    outline: none;
+}
+
+body.darktheme #headphonesDiv {
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+body.darktheme #headphonesDiv button {
+    background-color: #555555;
+    border: 1px solid #666666;
+    color: #ffffff;
+}
+body.darktheme #outputSource {
+    background-color: #444444;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+}
+body.darktheme #outputSource:focus {
+    outline: none;
+}
+
+body.darktheme #effectsDiv {
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+body.darktheme #effectSelector {
+    background-color: #444444;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+}
+body.darktheme #effectSelector:focus {
+    outline: none;
+}
+body.darktheme #effectsDiv label {
+    color: #ffffff;
+}
+
