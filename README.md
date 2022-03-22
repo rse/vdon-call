@@ -72,7 +72,8 @@ The solution consists of the following parts which have to be installed:
 
 1. **URL TRAMPOLINE:**
 
-   This is just the file [index.html](index.html), which acts as a URL trampoline, a
+   This is just the files [index.html](index.html), [vdon.css](vdon.css) and [vdon-call-logo.svg](vdon-call-logo.svg),
+   which act as a URL trampoline, a
    tiny webpage which generates the underlying, heavily parameterized VDO.Ninja
    URLs. Install it as `index.html` to an arbitrary Internet service.
    The page without any attached parameters is usually only used
