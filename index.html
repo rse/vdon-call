@@ -270,8 +270,8 @@
             /*  parse URL hash string  */
             let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+?)(?:\?(.*))?$/)
             if (m === null) {
-                alert("ALERT: invalid parameters")
-                throw new Error("ALERT: invalid parameters")
+                alert("ERROR: invalid parameters")
+                throw new Error("ERROR: invalid parameters")
             }
             let [ , org, room, id, paramsS ] = m
             if (!paramsS)
@@ -313,9 +313,9 @@
             const isOBS    = !!window.obsstudio
             const isIOS    = !!window.navigator.userAgent.match(/(?:iPad|iPhone)/i)
             if (!(isChrome || isOBS || isIOS))
-                alert("ALERT: Sorry, Google Chrome or a Chromium-based browser is strongly recommended for VDO.Ninja. " +
-                    "Firefox, Safari or other browsers are just partially supported. " +
-                    "Hence, start over with Google Chrome, please!")
+                alert("WARNING: Google Chrome (or a Chromium-based browser like Edge or Opera) is strongly " +
+                    "recommended for VDO.Ninja. Firefox, Safari or other browsers are just partially supported. " +
+                    "Hence, start over with Google Chrome, PLEASE!")
 
             /*  define maximum number of callers  */
             const callersMax          = 8
