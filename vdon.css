@@ -16,7 +16,7 @@ body.darktheme .container-inner {
 
 body.darktheme .gowebcam {
     border: 1px solid #cc3333;
-    background-color: #990000;
+    background-color: #990000 !important;
     border-radius: 4px;
     color: #ffffff;
 }
@@ -110,7 +110,7 @@ body.darktheme #effectsDiv label {
 
 body.darktheme #popupSelector {
     background: #111111e0;
-    border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 12px;
 }
 
 body.darktheme #videoMenu3 {
@@ -194,7 +194,88 @@ body.darktheme #popupSelector button {
 
 body.darktheme #chatModule {
     background: #111111e0;
-    border-radius: 4px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 12px;
+    width: 600px;
+}
+body.darktheme #chatInput {
+    border: 1px solid #6699cc;
+    background-color: #336699;
+    color: #ffffff;
+    padding: 6px 12px 6px 12px;
+    outline: none;
+}
+body.darktheme #chatInput::placeholder {
+    color: #77aadd !important;
+}
+body.darktheme #welcomeMsg {
+    background-color: #222222;
+    color: #999999;
+}
+body.darktheme .outMessage {
+    background-color: #336699;
+    color: #ffffff;
+    padding: 6px 12px 6px 12px;
+}
+body.darktheme .inMessage {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 6px 12px 6px 12px;
+}
+body.darktheme #chatModule button {
+    border: 1px solid #6699cc !important;
+    background-color: #336699 !important;
+    color: #ffffff !important;
+    padding: 6px 12px 6px 12px !important;
+    outline: none;
+    filter: none;
+    font-size: 100%;
+}
+
+/*  ====  */
+
+body.darktheme input[type=range] {
+    padding: 0;
+}
+
+/*  ====  */
+
+body.darktheme .popup-message {
+    background-color: #111111e0 !important;
+    border: 1px solid #333333e0 !important;
+    border-radius: 12px;
+    box-shadow: none !important;
+    padding: 12px !important;
+}
+body.darktheme .las.la-question-circle {
+    display: none;
+}
+body.darktheme [data-translate="add-more-here"] {
+    display: none;
+}
+
+/*  ====  */
+
+body.darktheme #connectedUsers {
+    box-shadow: 2px 2px 8px #313131 !important;
+}
+
+/*  ====  */
+
+body.darktheme .context-menu {
+    background-color: #111111e0 !important;
+    border: 1px solid #333333e0 !important;
+    border-radius: 6px;
+    color: #ffffff !important;
+    box-shadow: 2px 2px 8px #313131 !important;
+}
+body.darktheme .context-menu .context-menu__link {
+    color: #ffffff !important;
+}
+
+/*  ====  */
+
+body.darktheme #overlayClock {
+    border-radius: 12px;
 }
 
