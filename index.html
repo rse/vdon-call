@@ -211,7 +211,7 @@
     <body>
         <div v-bind:class="{ filled: !stream }" class="canvas">
             <div v-bind:class="{ visible: splash }" class="splash">
-                <div class="icon"></div>
+                <div v-show="stream" class="icon"></div>
                 <img src="vdon-call-logo.svg"/>
             </div>
             <div v-bind:class="{ visible: !splash }" class="index">
