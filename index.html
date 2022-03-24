@@ -19,9 +19,18 @@
             body {
                 font-family: "Calibri", "Helvetica", sans-serif;
                 font-size: 12pt;
-                background-color: #303030;
+                background-color: transparent;
                 color: #c0c0c0;
-                margin: 40px;
+                margin: 0;
+                padding: 0;
+            }
+            .canvas {
+                padding: 40px;
+                width: calc(100vw - 80px);
+                height: calc(100vh - 80px);
+            }
+            .canvas.filled {
+                background-color: #303030;
             }
             .splash {
                 display: none;
@@ -200,83 +209,88 @@
         </style>
     </head>
     <body>
-        <div v-bind:class="{ visible: splash }" class="splash">
-            <div class="icon"></div>
-            <img src="vdon-call-logo.svg"/>
-        </div>
-        <div v-bind:class="{ visible: !splash }" class="index">
-            <div class="logo">
+        <div v-bind:class="{ filled: !stream }" class="canvas">
+            <div v-bind:class="{ visible: splash }" class="splash">
+                <div class="icon"></div>
                 <img src="vdon-call-logo.svg"/>
             </div>
-            <div class="inputs">
-                <div class="col">
-                    <span class="label"><b>Organisation</b> &nbsp; (unique globally):</span>
-                    <p/>
-                    <input class="org" name="org" type="text" v-model="org"/>
+            <div v-bind:class="{ visible: !splash }" class="index">
+                <div class="logo">
+                    <img src="vdon-call-logo.svg"/>
                 </div>
-                <div class="col">
-                    <span class="label"><b>Room</b> &nbsp; (unique per organisation):</span>
-                    <p/>
-                    <input class="room" name="room" type="text" v-model="room"/>
+                <div class="inputs">
+                    <div class="col">
+                        <span class="label"><b>Organisation</b> &nbsp; (unique globally):</span>
+                        <p/>
+                        <input class="org" name="org" type="text" v-model="org"/>
+                    </div>
+                    <div class="col">
+                        <span class="label"><b>Room</b> &nbsp; (unique per organisation):</span>
+                        <p/>
+                        <input class="room" name="room" type="text" v-model="room"/>
+                    </div>
                 </div>
-            </div>
-            <p/>
-            <div class="overlay-container">
-                <span class="label"><b>Trampoline Links</b> &nbsp; (unique globally):</span>
                 <p/>
-                <div class="links">
-                    <div class="link director"><a v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
-                    <div class="link director"><a v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
-                    <div class="link production"><a v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
-                    <div class="link production"><a v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
+                <div class="overlay-container">
+                    <span class="label"><b>Trampoline Links</b> &nbsp; (unique globally):</span>
+                    <p/>
+                    <div class="links">
+                        <div class="link director"><a v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
+                        <div class="link director"><a v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
+                        <div class="link production"><a v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
+                        <div class="link production"><a v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
+                    </div>
+                    <div class="links">
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C5')"><span class="id">C5</span> Caller-5 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C6')"><span class="id">C6</span> Caller-6 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C7')"><span class="id">C7</span> Caller-7 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-bind:href="mkURL('C8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
+                    </div>
+                    <div class="links">
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C1', 'stream=camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C2', 'stream=camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C3', 'stream=camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C4', 'stream=camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C5', 'stream=camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C6', 'stream=camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C7', 'stream=camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C8', 'stream=camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, camera)</span></a></div>
+                    </div>
+                    <div class="links">
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C1', 'stream=content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C2', 'stream=content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C3', 'stream=content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C4', 'stream=content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C5', 'stream=content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C6', 'stream=content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C7', 'stream=content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, content)</span></a></div>
+                    </div>
+                    <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
-                <div class="links">
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C5')"><span class="id">C5</span> Caller-5 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C6')"><span class="id">C6</span> Caller-6 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C7')"><span class="id">C7</span> Caller-7 <span class="info">(sender)</span></a></div>
-                    <div class="link caller-sender"><a v-bind:href="mkURL('C8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
+                <div class="footer">
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.3.2 (2022-03-24),
+                    Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
+                    Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
+                    Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
                 </div>
-                <div class="links">
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C1', 'stream=camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C2', 'stream=camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C3', 'stream=camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C4', 'stream=camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C5', 'stream=camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C6', 'stream=camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C7', 'stream=camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, camera)</span></a></div>
-                    <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C8', 'stream=camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, camera)</span></a></div>
-                </div>
-                <div class="links">
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C1', 'stream=content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C2', 'stream=content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C3', 'stream=content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C4', 'stream=content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C5', 'stream=content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C6', 'stream=content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C7', 'stream=content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, content)</span></a></div>
-                    <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, content)</span></a></div>
-                </div>
-                <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
-            </div>
-            <div class="footer">
-                <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.3.2 (2022-03-24),
-                Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
-                Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
-                Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
             </div>
         </div>
     </body>
     <script type="text/javascript">
         const hash = window.location.hash
+        if (typeof hash !== "string")
+            hash = ""
 
         /*  render the index page  */
         Vue.createApp({
             data () { return {
                 splash: (hash !== ""),
+                stream: (hash.match(/.*stream=.*/) !== null),
                 org:    "",
                 room:   ""
             } },
@@ -309,7 +323,6 @@
                 paramsS = ""
 
             /*  parse optional parameters  */
-            console.log(paramsS)
             const params = {}
             const paramsA = paramsS.split("&")
             for (const param of paramsA) {
