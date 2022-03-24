@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+**
+**  VDON Call ~ VDO.Ninja Remote Caller Ingest
+**  Copyright (c) 2022 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Licensed under MIT license <https://spdx.org/licenses/MIT>
+**
+-->
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <title>VDON Call</title>
+        <style type="text/css">
+            body {
+                font-family: "Calibri", "Helvetica", sans-serif;
+                font-size: 12pt;
+                background-color: transparent;
+                color: #c0c0c0;
+                margin: 0;
+                padding: 0;
+            }
+            .page {
+                width:  100vw;
+                height: 100vh;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            .page .logo {
+                width: 40%;
+            }
+            .page .icon {
+                width:  100px;
+                height: 100px;
+                border-radius: 50px;
+                background-color: red;
+                position: absolute;
+                top: 50px;
+                right: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="icon">
+            </div>
+            <div class="logo">
+                <img src="vdon-call-logo.svg"/>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        const url = window.location.hash.replace(/^#/, "")
+        setTimeout(() => { window.location.assign(url) }, 4000 + Math.floor(Math.random() * 4000))
+    </script>
+</html>
