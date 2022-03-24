@@ -87,11 +87,13 @@ The solution consists of the following parts which have to be installed:
 2. **WEBRTC-TO-NDI GATEWAY:**
 
    This is an OBS Studio instance, driven by the files [obs-studio/basic.ini](obs-studio/basic.ini),
-   [obs-studio.json](obs-studio.json) and
-   [obs-studio.lua](obs-studio.lua).
-   These are the OBS Studio profile, scene collection and configuration update script,
-   which establish OBS Studio as a WebRTC-to-NDI gateway. For this to work,
-   you have to locally install the following prerequisites:
+   [obs-studio.json](obs-studio.json),
+   [obs-studio.lua](obs-studio.lua) and
+   [obs-studio.html](obs-studio.html).
+   These are the OBS Studio profile, scene collection, configuration update script and
+   optional entry page, which establish OBS Studio as a WebRTC-to-NDI gateway.
+   For this to work, you have to locally install the following
+   prerequisites:
 
    - [NDI Tools](https://www.ndi.tv/tools/)
    - [OBS Studio](https://obsproject.com/)
@@ -105,7 +107,10 @@ The solution consists of the following parts which have to be installed:
 
    Once this is done, use *Tools* &rarr; *Scripts* &rarr;
    `obs-studio.lua` to update all browser sources in OBS Studio with
-   your URL trampoline information.
+   your URL trampoline information. The "Base URL" is either `https://caller.studio/`,
+   `file://<path-to-obs-studio.html>/#https://caller.studio/` (if you want to
+   use the optional entry page -- usually just for debugging purposes),
+   or your own URL where you deployed the URL trampoline (see above).
 
 3. **VIDEO PRODUCTION:**
 
