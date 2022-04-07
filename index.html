@@ -602,7 +602,7 @@
                     beep:                 true,
                     webcam:               true,
                     ssb:                  true,
-                    effects:              true,
+                    effects:              false,
                     margin:               10
                 }
             }
@@ -652,7 +652,7 @@
                     else if ((m = p.match(/^no(.+)$/)) !== null)
                         config[m[1]] = false
                     else if (p !== "")
-                        config[param] = true
+                        config[p] = true
                 }
             }
 
