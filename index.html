@@ -451,9 +451,11 @@
                     limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
 
                     stereo:               1,
+                    screensharestereo:    1,
                     aec:                  1,
                     ag:                   0,
                     dn:                   1,
+                    ssdn:                 0,
                     lowcut:               80,
 
                     novideo:              true,
@@ -518,6 +520,7 @@
                     } : {}),
 
                     stereo:               1,
+                    screensharestereo:    1,
                     aec:                  0,
                     ag:                   0,
                     dn:                   0,
@@ -577,12 +580,13 @@
                     ...(params.lang ? { ln: params.lang } : {}),
 
                     stereo:               1,
+                    screensharestereo:    1,
                     aec:                  1,
                     ag:                   1,
                     dn:                   1,
+                    ssdn:                 0,
                     lowcut:               80,
                     compressor:           true,
-                    ssdn:                 0,
 
                     showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
                     noheader:             true,
@@ -631,6 +635,8 @@
                     codec:                (params.codec ? params.codec : "h264"), /* affects incoming feed (camera and content) */
                     ...(!params.codec || params.codec === "h264" ? { h264profile: true } : {}),
                     stereo:               1,
+                    dn:                   1,
+                    ssdn:                 0,
 
                     darkmode:             true,
                     transparent:          true,
