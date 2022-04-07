@@ -130,7 +130,7 @@
                 color: #ffffff;
                 font-size: 18pt;
                 font-weight: bold;
-                width: 300px;
+                width: 200px;
                 height: 50px;
                 background-color: #222222;
                 border-top: 1px solid #000000;
@@ -231,6 +231,11 @@
                         <p/>
                         <input class="room" name="room" type="text" v-model="room"/>
                     </div>
+                    <div class="col">
+                        <span class="label"><b>Parameters</b> &nbsp; (optional):</span>
+                        <p/>
+                        <input class="params" name="params" type="text" v-model="params"/>
+                    </div>
                 </div>
                 <p/>
                 <div class="overlay-container">
@@ -294,7 +299,8 @@
                 splash: (hash !== ""),
                 stream: (hash.match(/.*stream=.*/) !== null),
                 org:    "",
-                room:   ""
+                room:   "",
+                params: ""
             } },
             methods: {
                 mkURL (id, params) {
@@ -302,11 +308,16 @@
                         return ""
                     if (this.room === "")
                         return ""
-                    const org  = this.org.replace(/\s+/g, "_")
-                    const room = this.room.replace(/\s+/g, "_")
+                    const org  = encodeURIComponent(this.org.replace(/\s+/g, "_"))
+                    const room = encodeURIComponent(this.room.replace(/\s+/g, "_"))
                     let url = `#/${org}/${room}/${id}`
+                    let p = ""
                     if (params)
-                        url += `?${params}`
+                        p += params
+                    if (this.params !== "")
+                        p += (p !== "" ? "&" : "") + this.params
+                    if (p !== "")
+                        url += `?${p}`
                     return url
                 }
             }
@@ -631,6 +642,19 @@
             /*  apply custom theme  */
             config.css = encodeURIComponent(window.location.href
                 .replace(/#.*$/, "").replace(/\/[^/]*$/, "") + "/vdon.css")
+
+            /*  allow arbitrary VDO.Ninja options to be overridden  */
+            if (params.vdon) {
+                for (const p of params.vdon.split(/,/)) {
+                    let m
+                    if ((m = p.match(/^(.+):(.+)$/)) !== null)
+                        config[m[1]] = m[2]
+                    else if ((m = p.match(/^no(.+)$/)) !== null)
+                        config[m[1]] = false
+                    else if (p !== "")
+                        config[param] = true
+                }
+            }
 
             /*  derive VDO.Ninja URL and redirect to it  */
             setTimeout(() => {
