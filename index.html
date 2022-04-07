@@ -275,7 +275,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.3.3 (2022-03-24),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.3.4 (2022-04-07),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -374,14 +374,14 @@
 
             /*  define quality parameters of Camera (production inbound feed from callers)  */
             const cameraVideoQuality  = 1
-            const cameraVideoFPS      = 24
-            const cameraVideoKBPS     = 2000
+            const cameraVideoFPS      = (params.quality === "high" ? 29.97 : 24)
+            const cameraVideoKBPS     = (params.quality === "high" ? 3000 : 2000)
             const cameraAudioKBPS     = 256
 
             /*  define quality parameters of Content (production inbound feed from callers)  */
             const contentVideoQuality = 0
-            const contentVideoFPS     = 6
-            const contentVideoKBPS    = 3000
+            const contentVideoFPS     = (params.quality === "high" ? 29.97 : 6)
+            const contentVideoKBPS    = (params.quality === "high" ? 3000 : 2000)
             const contentAudioKBPS    = 256
 
             /*  VDO.Ninja Bitrate Parameter Overview
@@ -430,7 +430,7 @@
                     quality:              cameraVideoQuality,
                     framerate:            cameraVideoFPS,
 
-                    codec:                "vp8",                /* affects outgoing feed (not used) */
+                    codec:                (params.codec ? params.codec : "vp8"), /* affects outgoing feed (not used) */
                     videobitrate:         cameraVideoKBPS,
                     zoomedbitrate:        cameraVideoKBPS,
                     audiobitrate:         cameraAudioKBPS,
@@ -488,7 +488,7 @@
                     ssq:                  programVideoQuality,
                     ssfps:                programVideoFPS,
 
-                    codec:                "vp8",               /* affects incoming feeds (not used) */
+                    codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feeds (not used) */
                     videobitrate:         programVideoKBPS,
                     zoomedbitrate:        programVideoKBPS,
                     audiobitrate:         programAudioKBPS,
@@ -499,10 +499,10 @@
 
                     ...(params.mode === "meshcast" ? {
                     meshcast:             true,
-                    meshcastcodec:        "vp8",               /* affects outgoung feed (return feed) */
+                    meshcastcodec:        (params.codec ? params.codec : "vp8"), /* affects outgoing feed (return feed) */
                     meshcastbitrate:      programVideoKBPS,
                     meshcastab:           programAudioKBPS,
-                    mcscreensharecodec:   "vp8",
+                    mcscreensharecodec:   (params.codec ? params.coded : "vp8"), /* affects outgoing feed (return feed) */
                     mcscreensharebitrate: programVideoKBPS
                     } : {}),
 
@@ -550,7 +550,7 @@
                     ssq:                  contentVideoQuality,
                     ssfps:                contentVideoFPS,
 
-                    codec:                "vp8",            /* affects incoming feed (return feed)  */
+                    codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feed (return feed)  */
                     videobitrate:         cameraVideoKBPS,
                     zoomedbitrate:        cameraVideoKBPS,
                     audiobitrate:         cameraAudioKBPS,
@@ -616,8 +616,8 @@
                     totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS),
                     maxtotalscenebitrate: (cameraVideoKBPS + cameraAudioKBPS),
 
-                    codec:                "h264",   /* affects incoming feed (camera and content) */
-                    h264profile:          true,
+                    codec:                (params.codec ? params.codec : "h264"), /* affects incoming feed (camera and content) */
+                    ...(!params.codec || params.codec === "h264" ? { h264profile: true } : {}),
                     stereo:               1,
 
                     darkmode:             true,
