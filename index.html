@@ -602,7 +602,8 @@
                     beep:                 true,
                     webcam:               true,
                     ssb:                  true,
-                    effects:              false,
+                    effects:              (params.blur ? 3 : false),
+                    effectvalue:          (params.blur ? 4 : false),
                     margin:               10
                 }
             }
