@@ -457,6 +457,8 @@
                     dn:                   1,
                     ssdn:                 0,
                     lowcut:               80,
+                    compressor:           true,
+                    ...(params.ducking ? { noisegate: 1 } : {}),
 
                     novideo:              true,
                     noaudio:              true,
