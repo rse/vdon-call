@@ -585,6 +585,7 @@
                     ssdn:                 0,
                     lowcut:               80,
                     compressor:           true,
+                    ...(params.ducking ? { noisegate: 1 } : {}),
 
                     showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
                     noheader:             true,
