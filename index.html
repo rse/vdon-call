@@ -589,6 +589,9 @@
                     compressor:           true,
                     ...(params.ducking ? { noisegate: 1 } : {}),
 
+                    ...(params.videodelay ? { buffer:   params.videodelay } : {}),
+                    ...(params.audiodelay ? { micdelay: params.audiodelay } : {}),
+
                     showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
                     noheader:             true,
                     preview:              true,
