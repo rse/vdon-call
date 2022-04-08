@@ -280,7 +280,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.3.7 (2022-04-07),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.3.8 (2022-04-08),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -651,7 +651,7 @@
                     let m
                     if ((m = p.match(/^(.+):(.+)$/)) !== null)
                         config[m[1]] = m[2]
-                    else if ((m = p.match(/^no(.+)$/)) !== null)
+                    else if ((m = p.match(/^no-(.+)$/)) !== null)
                         config[m[1]] = false
                     else if (p !== "")
                         config[p] = true
