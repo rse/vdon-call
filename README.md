@@ -266,6 +266,26 @@ The design of **VDON Call** is based on the following cruxes:
   user interface of VDO.Ninja is improved with a VDON Call specific
   style.
 
+Simplified Usage
+----------------
+
+For just ingesting 1-4 remote guests with VDON Call instead of vMix Call
+into vMix, you can alternatively directly run the receiver side inside a
+Web Browser type input of vMix (use at least the old but for vMix latest
+browser version V86).
+
+For ingesting a guest with 720p24 (camera) and 1080p6 (content) use:
+
+- Guest URL:        `https://caller.studio/#/example/example/C1`
+- vMix Input 1 URL: `https://caller.studio/#/example/example/C1?stream=camera`
+- vMix Input 2 URL: `https://caller.studio/#/example/example/C1?stream=content`
+
+For ingesting a guest with 1080p30 (camera) and 1080p30 (content) use:
+
+- Guest URL:        `https://caller.studio/#/example/example/C1?quality=high`
+- vMix Input 1 URL: `https://caller.studio/#/example/example/C1?quality=high&stream=camera`
+- vMix Input 2 URL: `https://caller.studio/#/example/example/C1?quality=high&stream=content`
+
 See Also
 --------
 
