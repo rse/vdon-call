@@ -145,6 +145,20 @@ The solution consists of the following logical parts under run-time:
   participating in a room where the user can only see its own camera and
   shared content preview and the return feed of the production (here
   a multiview from vMix).
+  You can also attach the following optional parameters to the URL:
+    - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
+    - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
+    - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
+    - `cam=<name>` (camera device)
+    - `mic=<name>` (microphone device)
+    - `spk=<name>` (speaker device)
+    - `lang=<cc>` (ISO country code for UI language)
+    - `bg=<type>` (background replacement: `blur`, `green` or `canvas`)
+    - `ducking` (use audio ducking/noisegate)
+    - `audiodelay=<ms>` (delay audio)
+    - `videodelay=<ms>` (delay video)
+  An example sender URL would be
+  `https://caller.studio/#/example/example/C1?cam=Standard&mic=Standard&lang=de&bg=blur`
 
   ![](shot-2-caller-sender.png)
 
@@ -157,12 +171,11 @@ The solution consists of the following logical parts under run-time:
   `https://caller.studio/#/example/example/C1?stream=content`. For an
   overview, a special multiview scene is in preview (and also exposed
   via NDI for inclusion into the multiview of the production -- see
-  below). You can attach the optional parameters
-  `cam` (camera device), `mic` (microphone device), `spk` (speaker device),
-  `lang` (ISO code for UI language), `blur` (background blurred),
-  `greenscreen` (background replaced with green) or `canvas` (background replaced with local image)
-  to the URL. An example URL would be
-  `https://caller.studio/#/example/example/C1?cam=Standard&mic=Standard&lang=de&blur"
+  below).
+  You can also attach the following optional parameters to the URL:
+    - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
+    - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
+    - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
 
   ![](shot-3-caller-receiver.png)
 
@@ -178,12 +191,18 @@ The solution consists of the following logical parts under run-time:
   program video stream and the clock. Either the program or (as
   shown shere) the multiview video stream is then send back to the
   callers via a companion Google Chrome instance accessing the URL
-  `https://caller.studio/#/example/example/A1` or
-  `https://caller.studio/#/example/example/A2?mode=meshcast`.
-  Similar to the `mode=meshcast`, you can attach the optional parameters
-  `cam` (camera device), `mic` (microphone device), and `spk` (speaker device)
-  to the URL. An example URL would be
-  `https://caller.studio/#/example/example/A1?cam=vMix Video External 2&mic=Line 2 (Virtual Audio Cable)"
+  `https://caller.studio/#/example/example/A1` (standard) or
+  `https://caller.studio/#/example/example/A2?mode=meshcast` (using the VDO.Ninja meshcast feature).
+  Similar to the `mode=meshcast`, you can attach the following optional parameters
+  to the URL:
+    - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
+    - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
+    - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
+    - `cam=<name>` (camera device)
+    - `mic=<name>` (microphone device)
+    - `spk=<name>` (speaker device)
+  An example URL would be
+  `https://caller.studio/#/example/example/A1?cam=vMix Video External 2&mic=Line 2 (Virtual Audio Cable)`
 
   ![](shot-4-production.png)
 
@@ -197,6 +216,8 @@ The solution consists of the following logical parts under run-time:
   all incoming video/audio feeds disabled and also does not send an own
   outgoing video/audio feed to not cause any additional network traffic
   on the callers.
+  You can also attach the following optional parameters to the URL:
+    - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
 
   ![](shot-5-director.png)
 

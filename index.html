@@ -280,7 +280,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.4.0 (2022-09-06),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.4.2 (2022-09-10),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -347,6 +347,11 @@
                 else if (param !== "")
                     params[param] = true
             }
+
+            /*  provide parameter backward-compatibility  */
+            if (params.blur)         params.bg = "blur"
+            if (params.greenscreen)  params.bg = "green"
+            if (params.canvas)       params.bg = "canvas"
 
             /*  derive 26-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
             const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
@@ -608,8 +613,13 @@
                     beep:                 true,
                     webcam:               true,
                     ssb:                  true,
-                    effects:              (params.blur ? 3 : (params.greenscreen ? 4 : (params.canvas ? 5 : false))),
-                    effectvalue:          (params.blur ? 4 : false),
+                    ..(param.bg ? {
+                        effects:          (params.bg === "blur" ? 3 : (params.bg === "green" ? 4 : (params.bg === "canvas" ? 5 : false))),
+                        effectvalue:      (params.bg === "blur" ? 4 : false),
+                    } : {
+                        effects:          false,
+                        effectvalue:      false
+                    } )
                     margin:               10,
                     fadein:               1000
                 }
