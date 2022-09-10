@@ -613,7 +613,7 @@
                     beep:                 true,
                     webcam:               true,
                     ssb:                  true,
-                    ..(param.bg ? {
+                    ...(param.bg ? {
                         effects:          (params.bg === "blur" ? 3 : (params.bg === "green" ? 4 : (params.bg === "canvas" ? 5 : false))),
                         effectvalue:      (params.bg === "blur" ? 4 : false)
                     } : {
