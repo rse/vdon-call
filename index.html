@@ -377,7 +377,7 @@
             if (!(isChrome || isOBS || isIOS))
                 alert("WARNING: Google Chrome (or a Chromium-based browser like Edge or Opera) is strongly " +
                     "recommended for VDO.Ninja. Firefox, Safari or other browsers are just partially supported. " +
-                    "Hence, start over with Google Chrome, PLEASE!")
+                    "Hence, start over with Google Chrome or at least Microsoft Edge or Opera, PLEASE!")
 
             /*  define maximum number of callers  */
             const callersMax          = 8
@@ -389,7 +389,7 @@
             const programAudioKBPS    = 256
 
             /*  define quality parameters of Camera (production inbound feed from callers)  */
-            const cameraVideoQuality  = 1
+            const cameraVideoQuality  = (params.quality === "high" ? 0 : 1)
             const cameraVideoFPS      = (params.quality === "high" ? 29.97 : 24)
             const cameraVideoKBPS     = (params.quality === "high" ? 3000 : 2000)
             const cameraAudioKBPS     = 256
