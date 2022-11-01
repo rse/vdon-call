@@ -145,7 +145,7 @@ The solution consists of the following logical parts under run-time:
   participating in a room where the user can only see its own camera and
   shared content preview and the return feed of the production (here
   a multiview from vMix).
-  You can also attach the following optional parameters to the URL:
+  You can also attach the following optional parameters to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
     - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
@@ -173,7 +173,7 @@ The solution consists of the following logical parts under run-time:
   overview, a special multiview scene is in preview (and also exposed
   via NDI for inclusion into the multiview of the production -- see
   below).
-  You can also attach the following optional parameters to the URL:
+  You can also attach the following optional parameters to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
     - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
@@ -196,7 +196,7 @@ The solution consists of the following logical parts under run-time:
   `https://caller.studio/#/example/example/A1` (standard) or
   `https://caller.studio/#/example/example/A2?mode=meshcast` (using the VDO.Ninja meshcast feature).
   Similar to the `mode=meshcast`, you can attach the following optional parameters
-  to the URL:
+  to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
     - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
@@ -219,7 +219,7 @@ The solution consists of the following logical parts under run-time:
   all incoming video/audio feeds disabled and also does not send an own
   outgoing video/audio feed to not cause any additional network traffic
   on the callers.
-  You can also attach the following optional parameters to the URL:
+  You can also attach the following optional parameters to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
     - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
 
