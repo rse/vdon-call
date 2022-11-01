@@ -275,8 +275,8 @@ Simplified Usage
 
 For just ingesting 1-4 remote guests with VDON Call instead of vMix Call
 into vMix, you can alternatively directly run the receiver side inside a
-Web Browser type input of vMix (use at least the old but for vMix latest
-browser version V86).
+Web Browser type input of vMix (for vMix 25 it is an ancient Chromium
+V86, but for vMix 26 it is at least V103).
 
 For ingesting a guest with 720p24 (camera) and 1080p6 (content) use:
 
