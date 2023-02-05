@@ -52,6 +52,7 @@ body.darktheme #audioMenu {
     border: 1px solid #333333;
     border-radius: 4px;
 }
+body.darktheme #audioMenu .las,
 body.darktheme .audioMenu .las {
     color: #ffffff;
 }
