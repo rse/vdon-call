@@ -34,6 +34,9 @@ body.darktheme .videoMenu {
     border: 1px solid #333333;
     border-radius: 4px;
 }
+body.darktheme .videoMenu .las {
+    color: #ffffff;
+}
 body.darktheme #videoSourceSelect {
     background-color: #444444;
     color: #ffffff;
@@ -48,6 +51,9 @@ body.darktheme #audioMenu {
     background-color: #222222;
     border: 1px solid #333333;
     border-radius: 4px;
+}
+body.darktheme .audioMenu .las {
+    color: #ffffff;
 }
 body.darktheme .audioTitle {
     color: #ffffff;
