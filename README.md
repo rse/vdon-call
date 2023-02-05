@@ -150,6 +150,7 @@ The solution consists of the following logical parts under run-time:
     - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
     - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
+    - `audiocodec=<id>`(use codec `pcm`, or `g722` instead of `opus`)
     - `cam=<name>` (camera device)
     - `mic=<name>` (microphone device)
     - `spk=<name>` (speaker device)
