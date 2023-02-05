@@ -633,7 +633,7 @@
                     room:                 roomId,
 
                     view:                 (params.stream === "camera" ? `${roomId}_${id}A` : `${roomId}_${id}B`),
-                    scene:                true,
+                    solo:                 true,
 
                     quality:              (params.stream === "camera" ? cameraVideoQuality : contentVideoQuality),
                     framerate:            (params.stream === "camera" ? cameraVideoFPS     : contentVideoFPS    ),
