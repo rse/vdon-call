@@ -16,13 +16,13 @@ body.darktheme .container-inner {
 
 body.darktheme .gowebcam {
     border: 1px solid #cc3333;
-    background-color: #990000 !important;
+    background: #990000 !important;
     border-radius: 4px;
     color: #ffffff;
 }
 body.darktheme .gowebcam:enabled {
     border: 1px solid #6699cc;
-    background-color: #336699 !important;
+    background: #336699 !important;
     color: #f0f0ff;
 }
 body.darktheme .gowebcam {
