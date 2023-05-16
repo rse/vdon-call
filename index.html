@@ -310,7 +310,7 @@
                         return ""
                     const org  = encodeURIComponent(this.org.replace(/\s+/g, "_"))
                     const room = encodeURIComponent(this.room.replace(/\s+/g, "_"))
-                    let url = `#/${org}/${room}/${id}`
+                    let url = `${window.location.origin}${window.location.pathname}#/${org}/${room}/${id}`
                     let p = ""
                     if (params)
                         p += params
