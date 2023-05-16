@@ -248,7 +248,7 @@
                         <div class="link production"><a v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
                     </div>
                     <div class="links">
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C1')" v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
                         <div class="link caller-sender"><a v-bind:href="mkURL('C2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
                         <div class="link caller-sender"><a v-bind:href="mkURL('C3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
                         <div class="link caller-sender"><a v-bind:href="mkURL('C4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
@@ -319,6 +319,10 @@
                     if (p !== "")
                         url += `?${p}`
                     return url
+                },
+                gotoURL (id, params) {
+                    const url = this.mkURL(id, params)
+                    window.location.assign(url)
                 }
             }
         }).mount(document.querySelector("body"))
