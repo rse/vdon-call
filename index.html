@@ -242,45 +242,45 @@
                     <span class="label"><b>Trampoline Links</b> &nbsp; (unique globally):</span>
                     <p/>
                     <div class="links">
-                        <div class="link director"><a v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
-                        <div class="link director"><a v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
-                        <div class="link production"><a v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
-                        <div class="link production"><a v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D1')" v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D2')" v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
+                        <div class="link production"><a v-on:click="gotoURL('A1')" v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
+                        <div class="link production"><a v-on:click="gotoURL('A2', 'mode=meshcast')" v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
                     </div>
                     <div class="links">
                         <div class="link caller-sender"><a v-on:click="gotoURL('C1')" v-bind:href="mkURL('C1')"><span class="id">C1</span> Caller-1 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C5')"><span class="id">C5</span> Caller-5 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C6')"><span class="id">C6</span> Caller-6 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C7')"><span class="id">C7</span> Caller-7 <span class="info">(sender)</span></a></div>
-                        <div class="link caller-sender"><a v-bind:href="mkURL('C8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C2')" v-bind:href="mkURL('C2')"><span class="id">C2</span> Caller-2 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C3')" v-bind:href="mkURL('C3')"><span class="id">C3</span> Caller-3 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C4')" v-bind:href="mkURL('C4')"><span class="id">C4</span> Caller-4 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C5')" v-bind:href="mkURL('C5')"><span class="id">C5</span> Caller-5 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C6')" v-bind:href="mkURL('C6')"><span class="id">C6</span> Caller-6 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C7')" v-bind:href="mkURL('C7')"><span class="id">C7</span> Caller-7 <span class="info">(sender)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('C8')" v-bind:href="mkURL('C8')"><span class="id">C8</span> Caller-8 <span class="info">(sender)</span></a></div>
                     </div>
                     <div class="links">
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C1', 'stream=camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C2', 'stream=camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C3', 'stream=camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C4', 'stream=camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C5', 'stream=camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C6', 'stream=camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C7', 'stream=camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, camera)</span></a></div>
-                        <div class="link caller-receiver-camera"><a v-bind:href="mkURL('C8', 'stream=camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C1', 'stream=camera')" v-bind:href="mkURL('C1', 'stream=camera')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C2', 'stream=camera')" v-bind:href="mkURL('C2', 'stream=camera')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C3', 'stream=camera')" v-bind:href="mkURL('C3', 'stream=camera')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C4', 'stream=camera')" v-bind:href="mkURL('C4', 'stream=camera')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C5', 'stream=camera')" v-bind:href="mkURL('C5', 'stream=camera')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C6', 'stream=camera')" v-bind:href="mkURL('C6', 'stream=camera')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C7', 'stream=camera')" v-bind:href="mkURL('C7', 'stream=camera')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, camera)</span></a></div>
+                        <div class="link caller-receiver-camera"><a v-on:click="gotoURL('C8', 'stream=camera')" v-bind:href="mkURL('C8', 'stream=camera')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, camera)</span></a></div>
                     </div>
                     <div class="links">
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C1', 'stream=content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C2', 'stream=content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C3', 'stream=content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C4', 'stream=content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C5', 'stream=content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C6', 'stream=content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C7', 'stream=content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, content)</span></a></div>
-                        <div class="link caller-receiver-content"><a v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C1', 'stream=content')" v-bind:href="mkURL('C1', 'stream=content')"><span class="id">C1</span> Caller-1 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C2', 'stream=content')" v-bind:href="mkURL('C2', 'stream=content')"><span class="id">C2</span> Caller-2 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C3', 'stream=content')" v-bind:href="mkURL('C3', 'stream=content')"><span class="id">C3</span> Caller-3 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C4', 'stream=content')" v-bind:href="mkURL('C4', 'stream=content')"><span class="id">C4</span> Caller-4 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C5', 'stream=content')" v-bind:href="mkURL('C5', 'stream=content')"><span class="id">C5</span> Caller-5 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C6', 'stream=content')" v-bind:href="mkURL('C6', 'stream=content')"><span class="id">C6</span> Caller-6 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C7', 'stream=content')" v-bind:href="mkURL('C7', 'stream=content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, content)</span></a></div>
+                        <div class="link caller-receiver-content"><a v-on:click="gotoURL('C8', 'stream=content')" v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, content)</span></a></div>
                     </div>
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.5.2 (2023-05-16),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.6.0 (2023-05-18),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; 2022-2023 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -289,11 +289,10 @@
         </div>
     </body>
     <script type="text/javascript">
-        const hash = window.location.hash
+        /*  render the splash or index page  */
+        let hash = window.location.hash
         if (typeof hash !== "string")
             hash = ""
-
-        /*  render the index page  */
         Vue.createApp({
             data () { return {
                 splash: (hash !== ""),
@@ -302,7 +301,12 @@
                 room:   "",
                 params: ""
             } },
+            mounted () {
+                if (hash !== "")
+                    this.redirectToVDON()
+            },
             methods: {
+                /*  create URL  */
                 mkURL (id, params) {
                     if (this.org === "")
                         return ""
@@ -320,384 +324,391 @@
                         url += `?${p}`
                     return url
                 },
+
+                /*  change URL and redirect to VDO.Ninja  */
                 gotoURL (id, params) {
                     const url = this.mkURL(id, params)
                     window.location.assign(url)
+                    hash = window.location.hash
+                    this.redirectToVDON()
+                },
+
+                /*  perform redirects to VDO.Ninja  */
+                redirectToVDON () {
+                    if (hash === "")
+                        return
+
+                    /*  parse URL hash string  */
+                    let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+?)(?:\?(.*))?$/)
+                    if (m === null) {
+                        alert("ERROR: invalid parameters")
+                        throw new Error("ERROR: invalid parameters")
+                    }
+                    let [ , org, room, id, paramsS ] = m
+                    if (!paramsS)
+                        paramsS = ""
+
+                    /*  parse optional parameters  */
+                    const params = {}
+                    const paramsA = paramsS.split("&")
+                    for (const param of paramsA) {
+                        let m
+                        if ((m = param.match(/^(.+)=(.+)$/)) !== null)
+                            params[m[1]] = m[2]
+                        else if ((m = param.match(/^no(.+)$/)) !== null)
+                            params[m[1]] = false
+                        else if (param !== "")
+                            params[param] = true
+                    }
+
+                    /*  provide parameter backward-compatibility  */
+                    if (params.blur)         params.bg = "blur"
+                    if (params.greenscreen)  params.bg = "green"
+                    if (params.canvas)       params.bg = "canvas"
+
+                    /*  derive 26-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
+                    const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
+                    const uuid = new UUID(5, ns, org + "/" + room)
+                    const uuidA = uuid.export()
+                    uuidA[3] ^= uuidA[0]
+                    uuidA[4] ^= uuidA[1]
+                    uuidA[5] ^= uuidA[2]
+                    const roomId = uuidA.slice(3)
+                        .map((x) => ("0" + x.toString(16)).substr(-2))
+                        .join("")
+                        .toUpperCase()
+
+                    /*  derive a display order from the id  */
+                    let order = 0
+                    if ((m = id.match(/(\d+)/)) !== null)
+                        order = Math.max(0, 100 - parseInt(m[1]))
+
+                    /*  band-aid to ensure people are using a decent browser  */
+                    const isChrome = !!window.chrome
+                    const isOBS    = !!window.obsstudio
+                    const isIOS    = !!window.navigator.userAgent.match(/(?:iPad|iPhone)/i)
+                    if (!(isChrome || isOBS || isIOS))
+                        alert("WARNING: Google Chrome (or a Chromium-based browser like Edge or Opera) is strongly " +
+                            "recommended for VDO.Ninja. Firefox, Safari or other browsers are just partially supported. " +
+                            "Hence, start over with Google Chrome or at least Microsoft Edge or Opera, PLEASE!")
+
+                    /*  define maximum number of callers  */
+                    const callersMax          = 8
+
+                    /*  define quality parameters of Program (production outbound feed to callers)  */
+                    const programVideoQuality = 0
+                    const programVideoFPS     = 29.97
+                    const programVideoKBPS    = 3000
+                    const programAudioKBPS    = 256
+
+                    /*  define quality parameters of Camera (production inbound feed from callers)  */
+                    const cameraVideoQuality  = (params.quality === "high" ? 0 : 1)
+                    const cameraVideoFPS      = (params.quality === "high" ? 29.97 : 24)
+                    const cameraVideoKBPS     = (params.quality === "high" ? 3000 : 2000)
+                    const cameraAudioKBPS     = 256
+
+                    /*  define quality parameters of Content (production inbound feed from callers)  */
+                    const contentVideoQuality = 0
+                    const contentVideoFPS     = (params.quality === "high" ? 29.97 : 6)
+                    const contentVideoKBPS    = (params.quality === "high" ? 3000 : 2000)
+                    const contentAudioKBPS    = 256
+
+                    /*  VDO.Ninja Bitrate Parameter Overview
+                        - videobitrate (per stream, inbound/outbound)
+                          The "desired target" bitrate in kbps
+                        - outboundvideobitrate (per stream, outbound)
+                          Target video bitrate and max bitrate for outgoing video streams
+                          Overrides videobitrate
+                        - zoomedbitrate (per stream, outbound)
+                          Lets you set the target bitrate for a guest when they 'zoom in'
+                          (fullscreen) on a video
+                        - maxbitrate (per stream, outbound)
+                          Limits the max video bitrate out for this publisher, per stream out.
+                          Useful if you are a director and you wish to prevent guests from
+                          pulling more than 500-kbps (LQ) or 1200-kbps (HQ) when in
+                        - roombitrate (per stream, outbound)
+                          Limits any guest viewer in the group chat room from pulling the video
+                          stream at more than the specified bitrate value. Does not impact what
+                          the director sees and does not limit the quality of what OBS has
+                          access to. Like maxbiterate but roombitrate only applies to fellow
+                          group room guests.
+                        - maxtotalscenebitrate (total, inbound)
+                          Max. inbound video bitrate a scene uses
+                        - limittotalbitrate (total, outbound)
+                          Limits the total outbound bitrate of a publisher.
+                        - totalroombitrate (total, inbound)
+                          The total bitrate a guest in a room can view video streams with
+                          Their combined bitrate total of all inbound video streams.  */
+
+                    /*  determine VDO.Ninja parameters based on operation mode (derived from the id)  */
+                    let config = {}
+                    if ((m = id.match(/^D(\d+)$/)) !== null) {
+                        /*
+                         *  ==== DIRECTOR (room control) ====
+                         */
+                        config = {
+                            director:             roomId,
+                            codirector:           roomId,
+
+                            push:                 `${roomId}_${id}A`,
+                            ssid:                 `${roomId}_${id}B`,
+                            label:                `Director-${m[1]}`,
+                            sslabel:              `Director-${m[1]} (Content)`,
+                            order:                300,
+
+                            quality:              cameraVideoQuality,
+                            framerate:            cameraVideoFPS,
+
+                            codec:                (params.codec ? params.codec : "vp8"), /* affects outgoing feed (not used) */
+                            videobitrate:         cameraVideoKBPS,
+                            zoomedbitrate:        cameraVideoKBPS,
+                            audiobitrate:         cameraAudioKBPS,
+
+                            roombitrate:          cameraVideoKBPS + cameraAudioKBPS,
+                            totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
+                            limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
+
+                            audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects outgoing feed (not used)  */
+                            stereo:               1,
+                            screensharestereo:    1,
+                            aec:                  1,
+                            ag:                   0,
+                            dn:                   1,
+                            ssdn:                 0,
+                            lowcut:               80,
+                            compressor:           true,
+                            ...(params.ducking ? { noisegate: 1 } : {}),
+
+                            novideo:              true,
+                            noaudio:              true,
+
+                            videodevice:          0,
+                            audiodevice:          0,
+                            mute:                 true,
+                            mutespeaker:          true,
+
+                            darkmode:             true,
+                            noheader:             true,
+                            nofileshare:          true,
+                            nowebsite:            true,
+                            cleandirector:        true,
+                            hidesolo:             true,
+                            orderby:              true
+                        }
+                    }
+                    else if ((m = id.match(/^A(\d+)$/)) !== null) {
+                        /*
+                         *  ==== PRODUCTION (return feed ingest) ====
+                         */
+                        config = {
+                            room:                 roomId,
+
+                            push:                 `${roomId}_${id}A`,
+                            ssid:                 `${roomId}_${id}B`,
+                            label:                `Production-${m[1]}`,
+                            sslabel:              `Production-${m[1]} (Content)`,
+                            order:                200,
+
+                            videodevice:          (params.cam ? params.cam : "Standard"),
+                            audiodevice:          (params.mic ? params.mic : "Standard"),
+                            outputdevice:         (params.spk ? params.spk : "Standard"),
+                            novideo:              true,
+                            noaudio:              true,
+                            mutespeaker:          true,
+
+                            quality:              programVideoQuality,
+                            framerate:            programVideoFPS,
+
+                            ssq:                  programVideoQuality,
+                            ssfps:                programVideoFPS,
+
+                            codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feeds (not used) */
+                            videobitrate:         programVideoKBPS,
+                            zoomedbitrate:        programVideoKBPS,
+                            audiobitrate:         programAudioKBPS,
+
+                            roombitrate:          (programVideoKBPS + programAudioKBPS),
+                            totalroombitrate:     2 * (programVideoKBPS + programAudioKBPS),
+                            limittotalbitrate:    2 * (programVideoKBPS + programAudioKBPS) * (callersMax + 1),
+
+                            ...(params.mode === "meshcast" ? {
+                            meshcast:             true,
+                            meshcastcodec:        (params.codec ? params.codec : "vp8"), /* affects outgoing feed (return feed) */
+                            meshcastbitrate:      programVideoKBPS,
+                            meshcastab:           programAudioKBPS,
+                            mcscreensharecodec:   (params.codec ? params.coded : "vp8"), /* affects outgoing feed (return feed) */
+                            mcscreensharebitrate: programVideoKBPS
+                            } : {}),
+
+                            audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (not used)  */
+                            stereo:               1,
+                            screensharestereo:    1,
+                            aec:                  0,
+                            ag:                   0,
+                            dn:                   0,
+                            ssdn:                 0,
+
+                            showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
+                            noheader:             true,
+                            preview:              true,
+                            style:                1,
+
+                            darkmode:             true,
+                            nowebsite:            true,
+                            nofileshare:          true,
+                            tallyoff:             true,
+                            webcam:               true,
+                            ssb:                  true,
+                            autostart:            true,
+                            margin:               10
+                        }
+                    }
+                    else if ((m = id.match(/^C(\d+)$/)) !== null && !params.stream) {
+                        /*
+                         *  ==== SENDER (caller sender-side) ====
+                         */
+                        config = {
+                            room:                 roomId,
+
+                            push:                 `${roomId}_${id}A`,
+                            ssid:                 `${roomId}_${id}B`,
+                            label:                `Caller-${m[1]}`,
+                            sslabel:              `Caller-${m[1]} (Content)`,
+                            order:                order,
+
+                            quality:              cameraVideoQuality,
+                            maxframerate:         cameraVideoFPS,
+                            noscale:              true,
+                            mediasettings:        true,
+                            smallshare:           true,
+                            selfbrowsersurface:   "exclude",
+                            displaysurface:       "monitor",
+                            fullscreenbutton:     true,
+
+                            ssq:                  contentVideoQuality,
+                            ssfps:                contentVideoFPS,
+
+                            codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feed (return feed)  */
+                            videobitrate:         cameraVideoKBPS,
+                            zoomedbitrate:        cameraVideoKBPS,
+                            audiobitrate:         cameraAudioKBPS,
+
+                            roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
+                            totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
+                            limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
+
+                            ...(params.cam ? { videodevice:  params.cam } : {}),
+                            ...(params.mic ? { audiodevice:  params.mic } : {}),
+                            ...(params.spk ? { outputdevice: params.spk } : {}),
+
+                            ...(params.lang ? { ln: params.lang } : {}),
+
+                            audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (return feed)  */
+                            stereo:               1,
+                            screensharestereo:    1,
+                            aec:                  1,
+                            ag:                   1,
+                            dn:                   1,
+                            ssdn:                 0,
+                            lowcut:               80,
+                            compressor:           true,
+                            ...(params.ducking ? { noisegate: 1 } : {}),
+
+                            ...(params.videodelay ? { buffer:   params.videodelay } : {}),
+                            ...(params.audiodelay ? { micdelay: params.audiodelay } : {}),
+
+                            showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
+                            noheader:             true,
+                            preview:              true,
+                            style:                1,
+
+                            darkmode:             true,
+                            nowebsite:            true,
+                            forcedlandscape:      true,
+                            showlist:             1,
+                            nofileshare:          true,
+                            grid:                 true,
+                            tallyoff:             true,
+                            hand:                 true,
+                            beep:                 true,
+                            webcam:               true,
+                            ssb:                  true,
+                            ...(params.bg ? {
+                                effects:          (params.bg === "blur" ? 3 : (params.bg === "green" ? 4 : (params.bg === "canvas" ? 5 : false))),
+                                effectvalue:      (params.bg === "blur" ? 4 : false)
+                            } : {
+                                effects:          false,
+                                effectvalue:      false
+                            } ),
+                            margin:               10,
+                            fadein:               1000
+                        }
+                    }
+                    else if (id.match(/^C\d+$/) && typeof params.stream === "string" && params.stream.match(/^(?:camera|content)$/)) {
+                        /*
+                         *  ==== RECEIVER (caller receiver-side) ====
+                         */
+                        config = {
+                            room:                 roomId,
+
+                            view:                 (params.stream === "camera" ? `${roomId}_${id}A` : `${roomId}_${id}B`),
+                            solo:                 true,
+
+                            quality:              (params.stream === "camera" ? cameraVideoQuality : contentVideoQuality),
+                            framerate:            (params.stream === "camera" ? cameraVideoFPS     : contentVideoFPS    ),
+
+                            videobitrate:         cameraVideoKBPS,
+                            zoomedbitrate:        cameraVideoKBPS,
+                            audiobitrate:         cameraAudioKBPS,
+
+                            roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
+                            totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS),
+                            maxtotalscenebitrate: (cameraVideoKBPS + cameraAudioKBPS),
+
+                            codec:                (params.codec ? params.codec : "h264"), /* affects incoming feed (camera and content) */
+                            ...(!params.codec || params.codec === "h264" ? { h264profile: true } : {}),
+                            audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (camera and content)  */
+                            stereo:               1,
+
+                            darkmode:             true,
+                            transparent:          true,
+                            cleanoutput:          true,
+                            nocursor:             true,
+                            nocontrols:           true,
+                            obsoff:               true
+                        }
+                    }
+
+                    /*  apply custom theme  */
+                    config.css = encodeURIComponent(window.location.href
+                        .replace(/#.*$/, "").replace(/\/[^/]*$/, "") + "/vdon.css")
+
+                    /*  allow arbitrary VDO.Ninja options to be overridden  */
+                    if (params.vdon) {
+                        for (const p of params.vdon.split(/,/)) {
+                            let m
+                            if ((m = p.match(/^(.+):(.+)$/)) !== null)
+                                config[m[1]] = m[2]
+                            else if ((m = p.match(/^no-(.+)$/)) !== null)
+                                config[m[1]] = false
+                            else if (p !== "")
+                                config[p] = true
+                        }
+                    }
+
+                    /*  derive VDO.Ninja URL and redirect to it  */
+                    setTimeout(() => {
+                        window.location.assign(
+                            "https://vdo.ninja/" +
+                            (typeof params.version === "string" && params.version !== "" ? (params.version + "/") : "") +
+                            "?" +
+                            (Object.keys(config)
+                                .filter((key) => config[key] !== false)
+                                .map((key) => (typeof config[key] === "boolean" ? key : `${key}=${config[key]}`))
+                                .join("&")))
+                    }, 2000)
                 }
             }
         }).mount(document.querySelector("body"))
-
-        /*  perform redirects to VDO.Ninja  */
-        if (hash !== "") {
-            /*  parse URL hash string  */
-            let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+?)(?:\?(.*))?$/)
-            if (m === null) {
-                alert("ERROR: invalid parameters")
-                throw new Error("ERROR: invalid parameters")
-            }
-            let [ , org, room, id, paramsS ] = m
-            if (!paramsS)
-                paramsS = ""
-
-            /*  parse optional parameters  */
-            const params = {}
-            const paramsA = paramsS.split("&")
-            for (const param of paramsA) {
-                let m
-                if ((m = param.match(/^(.+)=(.+)$/)) !== null)
-                    params[m[1]] = m[2]
-                else if ((m = param.match(/^no(.+)$/)) !== null)
-                    params[m[1]] = false
-                else if (param !== "")
-                    params[param] = true
-            }
-
-            /*  provide parameter backward-compatibility  */
-            if (params.blur)         params.bg = "blur"
-            if (params.greenscreen)  params.bg = "green"
-            if (params.canvas)       params.bg = "canvas"
-
-            /*  derive 26-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
-            const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
-            const uuid = new UUID(5, ns, org + "/" + room)
-            const uuidA = uuid.export()
-            uuidA[3] ^= uuidA[0]
-            uuidA[4] ^= uuidA[1]
-            uuidA[5] ^= uuidA[2]
-            const roomId = uuidA.slice(3)
-                .map((x) => ("0" + x.toString(16)).substr(-2))
-                .join("")
-                .toUpperCase()
-
-            /*  derive a display order from the id  */
-            let order = 0
-            if ((m = id.match(/(\d+)/)) !== null)
-                order = Math.max(0, 100 - parseInt(m[1]))
-
-            /*  band-aid to ensure people are using a decent browser  */
-            const isChrome = !!window.chrome
-            const isOBS    = !!window.obsstudio
-            const isIOS    = !!window.navigator.userAgent.match(/(?:iPad|iPhone)/i)
-            if (!(isChrome || isOBS || isIOS))
-                alert("WARNING: Google Chrome (or a Chromium-based browser like Edge or Opera) is strongly " +
-                    "recommended for VDO.Ninja. Firefox, Safari or other browsers are just partially supported. " +
-                    "Hence, start over with Google Chrome or at least Microsoft Edge or Opera, PLEASE!")
-
-            /*  define maximum number of callers  */
-            const callersMax          = 8
-
-            /*  define quality parameters of Program (production outbound feed to callers)  */
-            const programVideoQuality = 0
-            const programVideoFPS     = 29.97
-            const programVideoKBPS    = 3000
-            const programAudioKBPS    = 256
-
-            /*  define quality parameters of Camera (production inbound feed from callers)  */
-            const cameraVideoQuality  = (params.quality === "high" ? 0 : 1)
-            const cameraVideoFPS      = (params.quality === "high" ? 29.97 : 24)
-            const cameraVideoKBPS     = (params.quality === "high" ? 3000 : 2000)
-            const cameraAudioKBPS     = 256
-
-            /*  define quality parameters of Content (production inbound feed from callers)  */
-            const contentVideoQuality = 0
-            const contentVideoFPS     = (params.quality === "high" ? 29.97 : 6)
-            const contentVideoKBPS    = (params.quality === "high" ? 3000 : 2000)
-            const contentAudioKBPS    = 256
-
-            /*  VDO.Ninja Bitrate Parameter Overview
-                - videobitrate (per stream, inbound/outbound)
-                  The "desired target" bitrate in kbps
-                - outboundvideobitrate (per stream, outbound)
-                  Target video bitrate and max bitrate for outgoing video streams
-                  Overrides videobitrate
-                - zoomedbitrate (per stream, outbound)
-                  Lets you set the target bitrate for a guest when they 'zoom in'
-                  (fullscreen) on a video
-                - maxbitrate (per stream, outbound)
-                  Limits the max video bitrate out for this publisher, per stream out.
-                  Useful if you are a director and you wish to prevent guests from
-                  pulling more than 500-kbps (LQ) or 1200-kbps (HQ) when in
-                - roombitrate (per stream, outbound)
-                  Limits any guest viewer in the group chat room from pulling the video
-                  stream at more than the specified bitrate value. Does not impact what
-                  the director sees and does not limit the quality of what OBS has
-                  access to. Like maxbiterate but roombitrate only applies to fellow
-                  group room guests.
-                - maxtotalscenebitrate (total, inbound)
-                  Max. inbound video bitrate a scene uses
-                - limittotalbitrate (total, outbound)
-                  Limits the total outbound bitrate of a publisher.
-                - totalroombitrate (total, inbound)
-                  The total bitrate a guest in a room can view video streams with
-                  Their combined bitrate total of all inbound video streams.  */
-
-            /*  determine VDO.Ninja parameters based on operation mode (derived from the id)  */
-            let config = {}
-            if ((m = id.match(/^D(\d+)$/)) !== null) {
-                /*
-                 *  ==== DIRECTOR (room control) ====
-                 */
-                config = {
-                    director:             roomId,
-                    codirector:           roomId,
-
-                    push:                 `${roomId}_${id}A`,
-                    ssid:                 `${roomId}_${id}B`,
-                    label:                `Director-${m[1]}`,
-                    sslabel:              `Director-${m[1]} (Content)`,
-                    order:                300,
-
-                    quality:              cameraVideoQuality,
-                    framerate:            cameraVideoFPS,
-
-                    codec:                (params.codec ? params.codec : "vp8"), /* affects outgoing feed (not used) */
-                    videobitrate:         cameraVideoKBPS,
-                    zoomedbitrate:        cameraVideoKBPS,
-                    audiobitrate:         cameraAudioKBPS,
-
-                    roombitrate:          cameraVideoKBPS + cameraAudioKBPS,
-                    totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
-                    limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) * (callersMax + 1),
-
-                    audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects outgoing feed (not used)  */
-                    stereo:               1,
-                    screensharestereo:    1,
-                    aec:                  1,
-                    ag:                   0,
-                    dn:                   1,
-                    ssdn:                 0,
-                    lowcut:               80,
-                    compressor:           true,
-                    ...(params.ducking ? { noisegate: 1 } : {}),
-
-                    novideo:              true,
-                    noaudio:              true,
-
-                    videodevice:          0,
-                    audiodevice:          0,
-                    mute:                 true,
-                    mutespeaker:          true,
-
-                    darkmode:             true,
-                    noheader:             true,
-                    nofileshare:          true,
-                    nowebsite:            true,
-                    cleandirector:        true,
-                    hidesolo:             true,
-                    orderby:              true
-                }
-            }
-            else if ((m = id.match(/^A(\d+)$/)) !== null) {
-                /*
-                 *  ==== PRODUCTION (return feed ingest) ====
-                 */
-                config = {
-                    room:                 roomId,
-
-                    push:                 `${roomId}_${id}A`,
-                    ssid:                 `${roomId}_${id}B`,
-                    label:                `Production-${m[1]}`,
-                    sslabel:              `Production-${m[1]} (Content)`,
-                    order:                200,
-
-                    videodevice:          (params.cam ? params.cam : "Standard"),
-                    audiodevice:          (params.mic ? params.mic : "Standard"),
-                    outputdevice:         (params.spk ? params.spk : "Standard"),
-                    novideo:              true,
-                    noaudio:              true,
-                    mutespeaker:          true,
-
-                    quality:              programVideoQuality,
-                    framerate:            programVideoFPS,
-
-                    ssq:                  programVideoQuality,
-                    ssfps:                programVideoFPS,
-
-                    codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feeds (not used) */
-                    videobitrate:         programVideoKBPS,
-                    zoomedbitrate:        programVideoKBPS,
-                    audiobitrate:         programAudioKBPS,
-
-                    roombitrate:          (programVideoKBPS + programAudioKBPS),
-                    totalroombitrate:     2 * (programVideoKBPS + programAudioKBPS),
-                    limittotalbitrate:    2 * (programVideoKBPS + programAudioKBPS) * (callersMax + 1),
-
-                    ...(params.mode === "meshcast" ? {
-                    meshcast:             true,
-                    meshcastcodec:        (params.codec ? params.codec : "vp8"), /* affects outgoing feed (return feed) */
-                    meshcastbitrate:      programVideoKBPS,
-                    meshcastab:           programAudioKBPS,
-                    mcscreensharecodec:   (params.codec ? params.coded : "vp8"), /* affects outgoing feed (return feed) */
-                    mcscreensharebitrate: programVideoKBPS
-                    } : {}),
-
-                    audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (not used)  */
-                    stereo:               1,
-                    screensharestereo:    1,
-                    aec:                  0,
-                    ag:                   0,
-                    dn:                   0,
-                    ssdn:                 0,
-
-                    showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
-                    noheader:             true,
-                    preview:              true,
-                    style:                1,
-
-                    darkmode:             true,
-                    nowebsite:            true,
-                    nofileshare:          true,
-                    tallyoff:             true,
-                    webcam:               true,
-                    ssb:                  true,
-                    autostart:            true,
-                    margin:               10
-                }
-            }
-            else if ((m = id.match(/^C(\d+)$/)) !== null && !params.stream) {
-                /*
-                 *  ==== SENDER (caller sender-side) ====
-                 */
-                config = {
-                    room:                 roomId,
-
-                    push:                 `${roomId}_${id}A`,
-                    ssid:                 `${roomId}_${id}B`,
-                    label:                `Caller-${m[1]}`,
-                    sslabel:              `Caller-${m[1]} (Content)`,
-                    order:                order,
-
-                    quality:              cameraVideoQuality,
-                    maxframerate:         cameraVideoFPS,
-                    noscale:              true,
-                    mediasettings:        true,
-                    smallshare:           true,
-                    selfbrowsersurface:   "exclude",
-                    displaysurface:       "monitor",
-                    fullscreenbutton:     true,
-
-                    ssq:                  contentVideoQuality,
-                    ssfps:                contentVideoFPS,
-
-                    codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feed (return feed)  */
-                    videobitrate:         cameraVideoKBPS,
-                    zoomedbitrate:        cameraVideoKBPS,
-                    audiobitrate:         cameraAudioKBPS,
-
-                    roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
-                    totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
-                    limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
-
-                    ...(params.cam ? { videodevice:  params.cam } : {}),
-                    ...(params.mic ? { audiodevice:  params.mic } : {}),
-                    ...(params.spk ? { outputdevice: params.spk } : {}),
-
-                    ...(params.lang ? { ln: params.lang } : {}),
-
-                    audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (return feed)  */
-                    stereo:               1,
-                    screensharestereo:    1,
-                    aec:                  1,
-                    ag:                   1,
-                    dn:                   1,
-                    ssdn:                 0,
-                    lowcut:               80,
-                    compressor:           true,
-                    ...(params.ducking ? { noisegate: 1 } : {}),
-
-                    ...(params.videodelay ? { buffer:   params.videodelay } : {}),
-                    ...(params.audiodelay ? { micdelay: params.audiodelay } : {}),
-
-                    showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
-                    noheader:             true,
-                    preview:              true,
-                    style:                1,
-
-                    darkmode:             true,
-                    nowebsite:            true,
-                    forcedlandscape:      true,
-                    showlist:             1,
-                    nofileshare:          true,
-                    grid:                 true,
-                    tallyoff:             true,
-                    hand:                 true,
-                    beep:                 true,
-                    webcam:               true,
-                    ssb:                  true,
-                    ...(params.bg ? {
-                        effects:          (params.bg === "blur" ? 3 : (params.bg === "green" ? 4 : (params.bg === "canvas" ? 5 : false))),
-                        effectvalue:      (params.bg === "blur" ? 4 : false)
-                    } : {
-                        effects:          false,
-                        effectvalue:      false
-                    } ),
-                    margin:               10,
-                    fadein:               1000
-                }
-            }
-            else if (id.match(/^C\d+$/) && typeof params.stream === "string" && params.stream.match(/^(?:camera|content)$/)) {
-                /*
-                 *  ==== RECEIVER (caller receiver-side) ====
-                 */
-                config = {
-                    room:                 roomId,
-
-                    view:                 (params.stream === "camera" ? `${roomId}_${id}A` : `${roomId}_${id}B`),
-                    solo:                 true,
-
-                    quality:              (params.stream === "camera" ? cameraVideoQuality : contentVideoQuality),
-                    framerate:            (params.stream === "camera" ? cameraVideoFPS     : contentVideoFPS    ),
-
-                    videobitrate:         cameraVideoKBPS,
-                    zoomedbitrate:        cameraVideoKBPS,
-                    audiobitrate:         cameraAudioKBPS,
-
-                    roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
-                    totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS),
-                    maxtotalscenebitrate: (cameraVideoKBPS + cameraAudioKBPS),
-
-                    codec:                (params.codec ? params.codec : "h264"), /* affects incoming feed (camera and content) */
-                    ...(!params.codec || params.codec === "h264" ? { h264profile: true } : {}),
-                    audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (camera and content)  */
-                    stereo:               1,
-
-                    darkmode:             true,
-                    transparent:          true,
-                    cleanoutput:          true,
-                    nocursor:             true,
-                    nocontrols:           true,
-                    obsoff:               true
-                }
-            }
-
-            /*  apply custom theme  */
-            config.css = encodeURIComponent(window.location.href
-                .replace(/#.*$/, "").replace(/\/[^/]*$/, "") + "/vdon.css")
-
-            /*  allow arbitrary VDO.Ninja options to be overridden  */
-            if (params.vdon) {
-                for (const p of params.vdon.split(/,/)) {
-                    let m
-                    if ((m = p.match(/^(.+):(.+)$/)) !== null)
-                        config[m[1]] = m[2]
-                    else if ((m = p.match(/^no-(.+)$/)) !== null)
-                        config[m[1]] = false
-                    else if (p !== "")
-                        config[p] = true
-                }
-            }
-
-            /*  derive VDO.Ninja URL and redirect to it  */
-            setTimeout(() => {
-                window.location.assign(
-                    "https://vdo.ninja/" +
-                    (typeof params.version === "string" && params.version !== "" ? (params.version + "/") : "") +
-                    "?" +
-                    (Object.keys(config)
-                        .filter((key) => config[key] !== false)
-                        .map((key) => (typeof config[key] === "boolean" ? key : `${key}=${config[key]}`))
-                        .join("&")))
-            }, 2000)
-        }
     </script>
 </html>
