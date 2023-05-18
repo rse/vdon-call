@@ -30,9 +30,9 @@ body.darktheme .gowebcam {
 }
 
 body.darktheme .videoMenu {
-    background-color: #222222;
-    border: 1px solid #333333;
-    border-radius: 4px;
+    background-color: #222222 !important;
+    border: 1px solid #333333 !important;
+    border-radius: 4px !important;
 }
 body.darktheme .videoMenu .las {
     color: #ffffff;
@@ -70,6 +70,7 @@ body.darktheme #audioSource {
 }
 body.darktheme #audioSource label {
     color: #ffffff;
+    background-color: #444444;
 }
 body.darktheme #audioSource:focus {
     outline: none;
