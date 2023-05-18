@@ -136,6 +136,18 @@ body.darktheme #videoSource3:focus {
     outline: none;
 }
 
+body.darktheme #audioMenu2 {
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+
+body.darktheme #popupSelector_user_settings {
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+
 body.darktheme .form-group.multiselect {
     background-color: #222222;
     border: 1px solid #333333;
