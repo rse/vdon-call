@@ -147,7 +147,7 @@ The solution consists of the following logical parts under run-time:
   a multiview from vMix).
   You can also attach the following optional parameters to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
-    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
+    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `v22`, `dev`, `alpha`, `beta`, or even fully-qualified URL to own VDO.Ninja instance)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
     - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
     - `audiocodec=<id>`(use codec `pcm`, or `g722` instead of `opus`)
@@ -176,7 +176,7 @@ The solution consists of the following logical parts under run-time:
   below).
   You can also attach the following optional parameters to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
-    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
+    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `v22`, `dev`, `alpha`, `beta`, or even fully-qualified URL to own VDO.Ninja instance)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
     - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
 
@@ -199,7 +199,7 @@ The solution consists of the following logical parts under run-time:
   Similar to the `mode=meshcast`, you can attach the following optional parameters
   to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
-    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
+    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `v22`, `dev`, `alpha`, `beta`, or even fully-qualified URL to own VDO.Ninja instance)
     - `quality=high` (use 30/30 FPS and 3/3 Mbps instead of 24/6 FPS and 2/2 Mbps for camera/screen)
     - `codec=<id>` (use codec `x264`, `vp9`, `av1` or `webp` instead of `vp8`)
     - `cam=<name>` (camera device)
@@ -222,7 +222,7 @@ The solution consists of the following logical parts under run-time:
   on the callers.
   You can also attach the following optional parameters to the URL (concatenate multiple ones with "&"):
     - `vdon=<key>:<val>,...` (apply arbitrary VDO.Ninja options)
-    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `alpha`, `beta`, etc)
+    - `version=<id>` (force use of a particular VDO.Ninja version: `v20`, `v21`, `v22`, `dev`, `alpha`, `beta`, or even fully-qualified URL to own VDO.Ninja instance)
 
   ![](shot-5-director.png)
 

@@ -280,7 +280,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.6.1 (2023-05-25),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.6.2 (2023-05-26),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; 2022-2023 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -700,12 +700,21 @@
                         }
                     }
 
-                    /*  derive VDO.Ninja URL and redirect to it  */
+                    /*  derive VDO.Ninja URL  */
+                    let instance = "https://vdo.ninja/"
+                    if (typeof params.version === "string" && params.version !== "") {
+                       if (params.version === "dev")
+                           instance = "https://steveseguin.github.io/vdo.ninja/"
+                       else if (params.version.match(/^https?:/))
+                           instance = params.version
+                       else
+                           instance += params.version + "/"
+                    }
+
+                    /*  redirect to VDO.Ninja  */
                     setTimeout(() => {
                         window.location.assign(
-                            "https://vdo.ninja/" +
-                            (typeof params.version === "string" && params.version !== "" ? (params.version + "/") : "") +
-                            "?" +
+                            instance + "?" +
                             (Object.keys(config)
                                 .filter((key) => config[key] !== false)
                                 .map((key) => (typeof config[key] === "boolean" ? key : `${key}=${config[key]}`))
