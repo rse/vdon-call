@@ -16,7 +16,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
         <title>VDON Call</title>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.prod.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pure-uuid@1.6.3/uuid.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pure-uuid@1.8.1/uuid.min.js"></script>
         <style type="text/css">
             body {
                 font-family: "Calibri", "Helvetica", sans-serif;
@@ -282,7 +282,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.6.3 (2023-09-08),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.6.4 (2023-09-08),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; 2022-2023 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -365,6 +365,10 @@
 
                     /*  enfore particular stable VDO.Ninja version as the default  */
                     if (params.version === undefined)
+                        params.version = "v23"
+
+                    /*  allow easy access to latest version of VDO.Ninja, too */
+                    if (params.version === "latest")
                         params.version = ""
 
                     /*  provide parameter backward-compatibility  */
