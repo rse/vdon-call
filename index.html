@@ -193,14 +193,18 @@
             .links .link.caller-sender           a:hover { background-color: #222222; }
             .links .link.caller-sender           a .id   { color:            #bbbbbb; }
             .links .link.caller-sender           a .info { color:            #999999; }
-            .links .link.caller-receiver-camera  a       { background-color: #222222; }
-            .links .link.caller-receiver-camera  a:hover { background-color: #333333; }
-            .links .link.caller-receiver-camera  a .id   { color:            #bbbbbb; }
-            .links .link.caller-receiver-camera  a .info { color:            #999999; }
+            .links .link.caller-receiver-camera  a       { background-color: #223344; }
+            .links .link.caller-receiver-camera  a:hover { background-color: #334455; }
+            .links .link.caller-receiver-camera  a .id   { color:            #99bbdd; }
+            .links .link.caller-receiver-camera  a .info { color:            #6688aa; }
             .links .link.caller-receiver-content a       { background-color: #223344; }
             .links .link.caller-receiver-content a:hover { background-color: #334455; }
             .links .link.caller-receiver-content a .id   { color:            #99bbdd; }
             .links .link.caller-receiver-content a .info { color:            #6688aa; }
+            .links .link.scene                   a       { background-color: #223344; }
+            .links .link.scene                   a:hover { background-color: #334455; }
+            .links .link.scene                   a .id   { color:            #99bbdd; }
+            .links .link.scene                   a .info { color:            #6688aa; }
             .footer {
                 margin-top: 20px;
                 font-size: 70%;
@@ -241,11 +245,11 @@
                 </div>
                 <p/>
                 <div class="overlay-container">
-                    <span class="label"><b>Trampoline Links</b> &nbsp; (unique globally):</span>
+                    <span class="label"><b>Trampoline Links (Fixed Caller Setup)</b> &nbsp; (unique globally):</span>
                     <p/>
                     <div class="links">
-                        <div class="link director"><a v-on:click="gotoURL('D1')" v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
-                        <div class="link director"><a v-on:click="gotoURL('D2')" v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D1', 'silent')" v-bind:href="mkURL('D1', 'silent')"><span class="id">D1</span> Director-1 <span class="info">(control, silent)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D2', 'silent')" v-bind:href="mkURL('D2', 'silent')"><span class="id">D2</span> Director-2 <span class="info">(control, silent)</span></a></div>
                         <div class="link production"><a v-on:click="gotoURL('A1')" v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
                         <div class="link production"><a v-on:click="gotoURL('A2', 'mode=meshcast')" v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
                     </div>
@@ -279,10 +283,30 @@
                         <div class="link caller-receiver-content"><a v-on:click="gotoURL('C7', 'stream=content')" v-bind:href="mkURL('C7', 'stream=content')"><span class="id">C7</span> Caller-7 <span class="info">(receiver, content)</span></a></div>
                         <div class="link caller-receiver-content"><a v-on:click="gotoURL('C8', 'stream=content')" v-bind:href="mkURL('C8', 'stream=content')"><span class="id">C8</span> Caller-8 <span class="info">(receiver, content)</span></a></div>
                     </div>
+                    <p/>
+                    <span class="label"><b>Trampoline Links (Dynamic Caller Setup)</b> &nbsp; (partially unique globally):</span>
+                    <p/>
+                    <div class="links">
+                        <div class="link director"><a v-on:click="gotoURL('D1')" v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D2')" v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
+                        <div class="link production"><a v-on:click="gotoURL('A1')" v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
+                        <div class="link production"><a v-on:click="gotoURL('A2', 'mode=meshcast')" v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('CX')" v-bind:href="mkURL('CX')"><span class="id">CX</span> Caller-X <span class="info">(sender, MULTIPLE)</span></a></div>
+                    </div>
+                    <div class="links">
+                        <div class="link scene"><a v-on:click="gotoURL('S1')" v-bind:href="mkURL('S1')"><span class="id">S1</span> Scene-1 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S2')" v-bind:href="mkURL('S2')"><span class="id">S2</span> Scene-2 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S3')" v-bind:href="mkURL('S3')"><span class="id">S3</span> Scene-3 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S4')" v-bind:href="mkURL('S4')"><span class="id">S4</span> Scene-4 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S5')" v-bind:href="mkURL('S5')"><span class="id">S5</span> Scene-5 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S6')" v-bind:href="mkURL('S6')"><span class="id">S6</span> Scene-6 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S7')" v-bind:href="mkURL('S7')"><span class="id">S7</span> Scene-7 <span class="info">(room, scene)</span></a></div>
+                        <div class="link scene"><a v-on:click="gotoURL('S8')" v-bind:href="mkURL('S8')"><span class="id">S8</span> Scene-8 <span class="info">(room, scene)</span></a></div>
+                    </div>
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.6.6 (2024-01-25),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.7.0 (2024-02-01),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; 2022-2024 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -355,7 +379,7 @@
                     const paramsA = paramsS.split("&")
                     for (const param of paramsA) {
                         let m
-                        if ((m = param.match(/^(.+)=(.+)$/)) !== null)
+                        if ((m = param.match(/^(.+)=(.*)$/)) !== null)
                             params[m[1]] = m[2]
                         else if ((m = param.match(/^no(.+)$/)) !== null)
                             params[m[1]] = false
@@ -489,13 +513,17 @@
                             ssdn:                 0,
                             lowcut:               80,
                             compressor:           true,
-                            ...(params.ducking ? { noisegate: 1 } : {}),
+                            ...(params.ducking ? {
+                            noisegate:            1
+                            } : {}),
 
-                            novideo:              true,
+                            ...(params.silent ? {
                             noaudio:              true,
-
-                            videodevice:          0,
+                            novideo:              true,
                             audiodevice:          0,
+                            videodevice:          0
+                            } : {}),
+
                             mute:                 true,
                             mutespeaker:          true,
 
@@ -575,6 +603,99 @@
                             ssb:                  true,
                             autostart:            true,
                             margin:               10
+                        }
+                    }
+                    else if (id === "CX") {
+                        /*
+                         *  ==== SENDER (ad-hoc labeled caller sender-side) ====
+                         */
+                         const uuid = new UUID(1)
+                         const uuidA = uuid.export()
+                         console.log(uuidA, uuidA.length)
+                         uuidA[0] ^= uuidA[4] ^ uuidA[8]  ^ uuidA[12]
+                         uuidA[1] ^= uuidA[5] ^ uuidA[9]  ^ uuidA[13]
+                         uuidA[2] ^= uuidA[6] ^ uuidA[10] ^ uuidA[14]
+                         uuidA[3] ^= uuidA[7] ^ uuidA[11] ^ uuidA[15]
+                         const pushId = uuidA.slice(0, 4)
+                             .map((x) => ("0" + x.toString(16)).substr(-2))
+                             .join("")
+                             .toUpperCase()
+                        config = {
+                            room:                 roomId,
+
+                            push:                 `${roomId}_${pushId}A`,
+                            ssid:                 `${roomId}_${pushId}B`,
+                            sstype:               2,
+                            sshide:               true,
+                            label:                "",
+                            order:                order,
+
+                            quality:              cameraVideoQuality,
+                            maxframerate:         cameraVideoFPS,
+                            noscale:              true,
+                            mediasettings:        true,
+                            smallshare:           true,
+                            selfbrowsersurface:   "exclude",
+                            displaysurface:       "monitor",
+                            fullscreenbutton:     true,
+
+                            ssq:                  contentVideoQuality,
+                            ssfps:                contentVideoFPS,
+
+                            codec:                (params.codec ? params.codec : "vp8"), /* affects incoming feed (return feed)  */
+                            videobitrate:         cameraVideoKBPS,
+                            zoomedbitrate:        cameraVideoKBPS,
+                            audiobitrate:         cameraAudioKBPS,
+
+                            roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
+                            totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
+                            limittotalbitrate:    (cameraVideoKBPS + cameraAudioKBPS) + (contentVideoKBPS + contentAudioKBPS),
+
+                            ...(params.cam ? { videodevice:  params.cam } : {}),
+                            ...(params.mic ? { audiodevice:  params.mic } : {}),
+                            ...(params.spk ? { outputdevice: params.spk } : {}),
+
+                            ...(params.lang ? { ln: params.lang } : {}),
+
+                            audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (return feed)  */
+                            stereo:               1,
+                            screensharestereo:    1,
+                            aec:                  1,
+                            ag:                   1,
+                            dn:                   1,
+                            ssdn:                 0,
+                            lowcut:               80,
+                            compressor:           true,
+                            ...(params.ducking ? { noisegate: 1 } : {}),
+
+                            ...(params.videodelay ? { buffer:   params.videodelay } : {}),
+                            ...(params.audiodelay ? { micdelay: params.audiodelay } : {}),
+
+                            showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
+                            noheader:             true,
+                            preview:              true,
+                            style:                1,
+
+                            darkmode:             true,
+                            nowebsite:            true,
+                            forcedlandscape:      true,
+                            showlist:             1,
+                            nofileshare:          true,
+                            grid:                 true,
+                            tallyoff:             true,
+                            hand:                 true,
+                            beep:                 true,
+                            webcam:               true,
+                            ssb:                  true,
+                            ...(params.bg ? {
+                                effects:          (params.bg === "blur" ? 3 : (params.bg === "green" ? 4 : (params.bg === "canvas" ? 5 : false))),
+                                effectvalue:      (params.bg === "blur" ? 4 : false)
+                            } : {
+                                effects:          false,
+                                effectvalue:      false
+                            } ),
+                            margin:               10,
+                            fadein:               1000
                         }
                     }
                     else if ((m = id.match(/^C(\d+)$/)) !== null && !params.stream) {
@@ -694,6 +815,41 @@
                             obsoff:               true
                         }
                     }
+                    else if ((m = id.match(/^S(\d+)$/)) !== null) {
+                        /*
+                         *  ==== SCENE (caller placed into a room scene by director) ====
+                         */
+                        config = {
+                            room:                 roomId,
+
+                            scene:                m[1],
+
+                            quality:              cameraVideoQuality,
+                            framerate:            cameraVideoFPS,
+
+                            videobitrate:         cameraVideoKBPS,
+                            zoomedbitrate:        cameraVideoKBPS,
+                            audiobitrate:         cameraAudioKBPS,
+
+                            roombitrate:          (cameraVideoKBPS + cameraAudioKBPS),
+                            totalroombitrate:     (cameraVideoKBPS + cameraAudioKBPS),
+                            maxtotalscenebitrate: (cameraVideoKBPS + cameraAudioKBPS),
+
+                            codec:                (params.codec ? params.codec : "h264"), /* affects incoming feed (camera and content) */
+                            ...(!params.codec || params.codec === "h264" ? { h264profile: true } : {}),
+                            audiocodec:           (params.audiocodec ? params.audiocodec : "opus"), /* affects incoming feed (camera and content)  */
+                            stereo:               1,
+
+                            darkmode:             true,
+                            transparent:          true,
+                            cleanoutput:          true,
+                            nocursor:             true,
+                            nocontrols:           true,
+                            obsoff:               true
+                        }
+                    }
+                    else
+                        alert(`invalid operation mode: ${id}`)
 
                     /*  apply custom theme  */
                     config.css = encodeURIComponent(window.location.href
@@ -703,7 +859,7 @@
                     if (params.vdon) {
                         for (const p of params.vdon.split(/,/)) {
                             let m
-                            if ((m = p.match(/^(.+):(.+)$/)) !== null)
+                            if ((m = p.match(/^(.+):(.*)$/)) !== null)
                                 config[m[1]] = m[2]
                             else if ((m = p.match(/^no-(.+)$/)) !== null)
                                 config[m[1]] = false
