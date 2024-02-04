@@ -287,11 +287,14 @@
                     <span class="label"><b>Trampoline Links (Dynamic Caller Setup)</b> &nbsp; (partially unique globally):</span>
                     <p/>
                     <div class="links">
-                        <div class="link director"><a v-on:click="gotoURL('D1')" v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control)</span></a></div>
-                        <div class="link director"><a v-on:click="gotoURL('D2')" v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D1')" v-bind:href="mkURL('D1')"><span class="id">D1</span> Director-1 <span class="info">(control, direct)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D2')" v-bind:href="mkURL('D2')"><span class="id">D2</span> Director-2 <span class="info">(control, direct)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D1', 'vdon=queue')" v-bind:href="mkURL('D1', 'vdon=queue')"><span class="id">D1</span> Director-1 <span class="info">(control, queue)</span></a></div>
+                        <div class="link director"><a v-on:click="gotoURL('D2', 'vdon=queue')" v-bind:href="mkURL('D2', 'vdon=queue')"><span class="id">D2</span> Director-2 <span class="info">(control, queue)</span></a></div>
                         <div class="link production"><a v-on:click="gotoURL('A1')" v-bind:href="mkURL('A1')"><span class="id">A1</span> Production-1 <span class="info">(sender)</span></a></div>
                         <div class="link production"><a v-on:click="gotoURL('A2', 'mode=meshcast')" v-bind:href="mkURL('A2', 'mode=meshcast')"><span class="id">A2</span> Production-2 <span class="info">(sender, meshcast)</span></a></div>
-                        <div class="link caller-sender"><a v-on:click="gotoURL('CX')" v-bind:href="mkURL('CX')"><span class="id">CX</span> Caller-X <span class="info">(sender, MULTIPLE)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('CX')" v-bind:href="mkURL('CX')"><span class="id">CX</span> Caller-X <span class="info">(senders, direct)</span></a></div>
+                        <div class="link caller-sender"><a v-on:click="gotoURL('CX', 'vdon=queue,hold')" v-bind:href="mkURL('CX', 'vdon=queue,hold')"><span class="id">CX</span> Caller-X <span class="info">(senders, queue)</span></a></div>
                     </div>
                     <div class="links">
                         <div class="link scene"><a v-on:click="gotoURL('S1')" v-bind:href="mkURL('S1')"><span class="id">S1</span> Scene-1 <span class="info">(room, scene)</span></a></div>
@@ -306,7 +309,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.7.1 (2024-02-03),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.7.2 (2024-02-04),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; 2022-2024 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
