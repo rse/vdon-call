@@ -309,7 +309,7 @@
                     <div class="overlay" v-bind:class="{ open: org !== '' && room !== '' }"></div>
                 </div>
                 <div class="footer">
-                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.7.2 (2024-02-04),
+                    <a href="https://github.com/rse/vdon-call">VDON Call</a> 1.8.0 (2024-02-05),
                     Based on <a href="https://vdo.ninja">VDO.Ninja (VDON)</a>,
                     Copyright &copy; 2022-2024 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>,
                     Licensed under <a href="https://spdx.org/licenses/MIT">MIT</a> license.
@@ -362,6 +362,32 @@
                     this.redirectToVDON()
                 },
 
+                /*  convert a Pure-UUID into a folded 8-character hex-value  */
+                uuidToId (uuid) {
+                    const uuidA = uuid.export()
+                    uuidA[0] ^= uuidA[4] ^ uuidA[8]  ^ uuidA[12]
+                    uuidA[1] ^= uuidA[5] ^ uuidA[9]  ^ uuidA[13]
+                    uuidA[2] ^= uuidA[6] ^ uuidA[10] ^ uuidA[14]
+                    uuidA[3] ^= uuidA[7] ^ uuidA[11] ^ uuidA[15]
+                    return uuidA.slice(0, 4)
+                        .map((x) => ("0" + x.toString(16)).substr(-2))
+                        .join("")
+                        .toUpperCase()
+                },
+
+                /*  generate VDO.Ninja (unique) peer id  */
+                genPeerId () {
+                    const uuid = new UUID(1)
+                    return this.uuidToId(uuid)
+                },
+
+                /*  generate VDO.Ninja (derived) room id  */
+                genRoomId (org, room) {
+                    return `${org}_${room}`.replace(/([^a-zA-Z0-9_])/g, (_, ch) => {
+                        return ("0" + (ch.charCodeAt(0) % 255).toString(16)).substr(-2)
+                    })
+                },
+
                 /*  perform redirects to VDO.Ninja  */
                 redirectToVDON () {
                     if (hash === "")
@@ -374,6 +400,8 @@
                         throw new Error("ERROR: invalid parameters")
                     }
                     let [ , org, room, id, paramsS ] = m
+                    org  = decodeURIComponent(org)
+                    room = decodeURIComponent(room)
                     if (!paramsS)
                         paramsS = ""
 
@@ -403,17 +431,14 @@
                     if (params.greenscreen)  params.bg = "green"
                     if (params.canvas)       params.bg = "canvas"
 
-                    /*  derive 26-character long VDO.Ninja room id (notice: maximum is 31 chars)  */
-                    const ns = new UUID(3, "ns:URL", "https://github.com/rse/vdon-call")
-                    const uuid = new UUID(5, ns, org + "/" + room)
-                    const uuidA = uuid.export()
-                    uuidA[3] ^= uuidA[0]
-                    uuidA[4] ^= uuidA[1]
-                    uuidA[5] ^= uuidA[2]
-                    const roomId = uuidA.slice(3)
-                        .map((x) => ("0" + x.toString(16)).substr(-2))
-                        .join("")
-                        .toUpperCase()
+                    /*  generate primary and secondary room ids  */
+                    const roomIds = room.split(",").map((room) => this.genRoomId(org, room))
+                    const roomId = roomIds[0]
+
+                    /*  determine return feed ids  */
+                    const returnFeedIds = roomIds
+                        .map((roomId) => `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`)
+                        .join(",")
 
                     /*  derive a display order from the id  */
                     let order = 0
@@ -593,7 +618,7 @@
                             dn:                   0,
                             ssdn:                 0,
 
-                            showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
+                            showonly:             returnFeedIds,
                             noheader:             true,
                             preview:              true,
                             style:                1,
@@ -612,22 +637,12 @@
                         /*
                          *  ==== SENDER (ad-hoc labeled caller sender-side) ====
                          */
-                         const uuid = new UUID(1)
-                         const uuidA = uuid.export()
-                         console.log(uuidA, uuidA.length)
-                         uuidA[0] ^= uuidA[4] ^ uuidA[8]  ^ uuidA[12]
-                         uuidA[1] ^= uuidA[5] ^ uuidA[9]  ^ uuidA[13]
-                         uuidA[2] ^= uuidA[6] ^ uuidA[10] ^ uuidA[14]
-                         uuidA[3] ^= uuidA[7] ^ uuidA[11] ^ uuidA[15]
-                         const pushId = uuidA.slice(0, 4)
-                             .map((x) => ("0" + x.toString(16)).substr(-2))
-                             .join("")
-                             .toUpperCase()
+                        const peerId = this.genPeerId()
                         config = {
                             room:                 roomId,
 
-                            push:                 `${roomId}_${pushId}A`,
-                            ssid:                 `${roomId}_${pushId}B`,
+                            push:                 `${roomId}_${peerId}A`,
+                            ssid:                 `${roomId}_${peerId}B`,
                             sstype:               2,
                             sshide:               true,
                             label:                "",
@@ -674,7 +689,7 @@
                             ...(params.videodelay ? { buffer:   params.videodelay } : {}),
                             ...(params.audiodelay ? { micdelay: params.audiodelay } : {}),
 
-                            showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
+                            showonly:             returnFeedIds,
                             noheader:             true,
                             preview:              true,
                             style:                1,
@@ -757,7 +772,7 @@
                             ...(params.videodelay ? { buffer:   params.videodelay } : {}),
                             ...(params.audiodelay ? { micdelay: params.audiodelay } : {}),
 
-                            showonly:             `${roomId}_A1A,${roomId}_A1B,${roomId}_A2A,${roomId}_A2B`,
+                            showonly:             returnFeedIds,
                             noheader:             true,
                             preview:              true,
                             style:                1,
