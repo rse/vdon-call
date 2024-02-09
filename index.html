@@ -343,7 +343,12 @@
                         return ""
                     const org  = encodeURIComponent(this.org.replace(/\s+/g, "_"))
                     const room = encodeURIComponent(this.room.replace(/\s+/g, "_"))
-                    let url = `${window.location.origin}${window.location.pathname}#/${org}/${room}/${id}`
+                    if (id === "CX")
+                        id = ""
+                    let url = ""
+                    if (window.location.origin !== null && window.location.origin !== "null")
+                        url += window.location.origin
+                    url += `${window.location.pathname}#/${org}/${room}/${id}`
                     let p = ""
                     if (params)
                         p += params
@@ -394,7 +399,7 @@
                         return
 
                     /*  parse URL hash string  */
-                    let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]+?)(?:\?(.*))?$/)
+                    let m = hash.match(/^#\/([^/]+)\/([^/]+)\/([^/]*?)(?:\?(.*))?$/)
                     if (m === null) {
                         alert("ERROR: invalid parameters")
                         throw new Error("ERROR: invalid parameters")
@@ -633,7 +638,7 @@
                             margin:               10
                         }
                     }
-                    else if (id === "CX") {
+                    else if (id === "CX" || id === "") {
                         /*
                          *  ==== SENDER (ad-hoc labeled caller sender-side) ====
                          */
