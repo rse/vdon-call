@@ -554,11 +554,16 @@
                             noaudio:              true,
                             novideo:              true,
                             audiodevice:          0,
-                            videodevice:          0
-                            } : {}),
-
+                            videodevice:          0,
                             mute:                 true,
-                            mutespeaker:          true,
+                            mutespeaker:          true
+                            } : {
+                            videodevice:          (params.cam ? params.cam : "Standard"),
+                            audiodevice:          (params.mic ? params.mic : "Standard"),
+                            outputdevice:         (params.spk ? params.spk : "Standard"),
+                            mute:                 false,
+                            mutespeaker:          false
+                            }),
 
                             darkmode:             true,
                             noheader:             true,
