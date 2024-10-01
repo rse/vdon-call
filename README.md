@@ -49,7 +49,7 @@ There are two particular bottlenecks in this approach, which are
 addressed by the particular VDO.Ninja parameterization:
 
 1. **CALLER INGEST FEEDS**:
-   
+
    The caller receiver-side is an OBS Studio, acting as a WebRTC-to-NDI
    gateway and has to run on a medium gaming PC (Intel Core i7 11700KF,
    NVIDIA RTX 3070Ti, 32GB RAM) with just about a maximum of about 80%
@@ -58,7 +58,7 @@ addressed by the particular VDO.Ninja parameterization:
    use 1080p6 and a bitrate of 3000 kbps with H.264.
 
 2. **PRODUCTION RETURN FEED**:
- 
+
    The production sender-side, providing the return feed of the video
    production back to the caller, should require no more than half of
    the uplink (50 mbps) and downlink (100 mbps) of the usual Internet
