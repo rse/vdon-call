@@ -305,6 +305,6 @@ This solution was announced 2022/03 in the following communities:
 Copyright & License
 -------------------
 
-Copyright &copy; 2022-2023 [Dr. Ralf S. Engelschall](mailto:rse@engelschall.com)<br/>
+Copyright &copy; 2022-2025 [Dr. Ralf S. Engelschall](mailto:rse@engelschall.com)<br/>
 Licensed under [MIT](https://spdx.org/licenses/MIT)
 
