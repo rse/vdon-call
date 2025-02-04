@@ -302,15 +302,15 @@ body.darktheme #overlayClock {
 /*  ====  */
 
 body.darktheme .directorsgrid .vidcon {
-    background-color: #222222;
+    background-color: #222222 !important;
 }
 body.darktheme .directorsgrid .vidcon button {
-    background-color: #333333;
+    background-color: #333333 !important;
 }
 body.darktheme .directorsgrid .containerGreen {
-    background-color: #002200;
+    background-color: #002200 !important;
 }
 body.darktheme .directorsgrid .containerGreen button {
-    background-color: #003300;
+    background-color: #003300 !important;
 }
 
