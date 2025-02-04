@@ -299,3 +299,18 @@ body.darktheme #overlayClock {
     border-radius: 12px;
 }
 
+/*  ====  */
+
+body.darktheme .directorsgrid .vidcon {
+    background-color: #222222;
+}
+body.darktheme .directorsgrid .vidcon button {
+    background-color: #333333;
+}
+body.darktheme .directorsgrid .containerGreen {
+    background-color: #002200;
+}
+body.darktheme .directorsgrid .containerGreen button {
+    background-color: #003300;
+}
+
