@@ -312,8 +312,10 @@ body.darktheme .directorsgrid .containerGreen {
 }
 body.darktheme .directorsgrid .containerGreen button {
     background-color: #003300 !important;
+    border: 1px solid #006600 !important;
 }
 body.darktheme .directorsgrid .containerGreen button.pressed {
     background-color: #006600 !important;
+    border: 1px solid #009900 !important;
 }
 
