@@ -313,4 +313,7 @@ body.darktheme .directorsgrid .containerGreen {
 body.darktheme .directorsgrid .containerGreen button {
     background-color: #003300 !important;
 }
+body.darktheme .directorsgrid .containerGreen button.pressed {
+    background-color: #006600 !important;
+}
 
