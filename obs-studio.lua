@@ -1,7 +1,7 @@
 --[[
 **
 **  obs-studio.lua -- OBS Studio Lua Script for VDON Call Configuration
-**  Copyright (c) 2022-2023 Dr. Ralf S. Engelschall <rse@engelschall.com>
+**  Copyright (c) 2022-2026 Dr. Ralf S. Engelschall <rse@engelschall.com>
 **  Distributed under MIT license <https://spdx.org/licenses/MIT.html>
 **
 --]]
@@ -63,7 +63,7 @@ function script_description ()
     return [[
         <h2>VDON Call Configuration</h2>
 
-        Copyright &copy; 2022 <a style="color: #ffffff; text-decoration: none;"
+        Copyright &copy; 2022-2026 <a style="color: #ffffff; text-decoration: none;"
         href="http://engelschall.com">Dr. Ralf S. Engelschall</a><br/>
         Distributed under <a style="color: #ffffff; text-decoration: none;"
         href="https://spdx.org/licenses/MIT.html">MIT license</a>
