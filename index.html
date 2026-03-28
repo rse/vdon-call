@@ -375,7 +375,7 @@
                     uuidA[2] ^= uuidA[6] ^ uuidA[10] ^ uuidA[14]
                     uuidA[3] ^= uuidA[7] ^ uuidA[11] ^ uuidA[15]
                     return uuidA.slice(0, 4)
-                        .map((x) => ("0" + x.toString(16)).substr(-2))
+                        .map((x) => x.toString(16).padStart(2, "0"))
                         .join("")
                         .toUpperCase()
                 },
@@ -389,7 +389,7 @@
                 /*  generate VDO.Ninja (derived) room id  */
                 genRoomId (org, room) {
                     return `${org}_${room}`.replace(/([^a-zA-Z0-9_])/g, (_, ch) => {
-                        return ("0" + (ch.charCodeAt(0) % 255).toString(16)).substr(-2)
+                        return (ch.charCodeAt(0) % 255).toString(16).padStart(2, "0")
                     })
                 },
 
