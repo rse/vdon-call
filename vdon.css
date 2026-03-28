@@ -19,14 +19,12 @@ body.darktheme .gowebcam {
     background: #990000 !important;
     border-radius: 4px;
     color: #ffffff;
+    filter: none;
 }
 body.darktheme .gowebcam:enabled {
     border: 1px solid #6699cc;
     background: #336699 !important;
     color: #f0f0ff;
-}
-body.darktheme .gowebcam {
-    filter: none;
 }
 
 body.darktheme .videoMenu {
