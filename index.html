@@ -423,7 +423,7 @@
                             params[param] = true
                     }
 
-                    /*  enfore particular stable VDO.Ninja version as the default  */
+                    /*  enforce particular stable VDO.Ninja version as the default  */
                     if (params.version === undefined)
                         params.version = ""
 
@@ -617,7 +617,7 @@
                             meshcastcodec:        (params.codec ? params.codec : "vp8"), /* affects outgoing feed (return feed) */
                             meshcastbitrate:      programVideoKBPS,
                             meshcastab:           programAudioKBPS,
-                            mcscreensharecodec:   (params.codec ? params.coded : "vp8"), /* affects outgoing feed (return feed) */
+                            mcscreensharecodec:   (params.codec ? params.codec : "vp8"), /* affects outgoing feed (return feed) */
                             mcscreensharebitrate: programVideoKBPS
                             } : {}),
 
