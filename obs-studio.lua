@@ -37,8 +37,8 @@ end
 --  update entire configuration
 local function updateConfiguration ()
     local baseURL  = ctx.propsVal.textBase
-	local orgName  = ctx.propsVal.textOrg
-	local roomName = ctx.propsVal.textRoom
+    local orgName  = ctx.propsVal.textOrg
+    local roomName = ctx.propsVal.textRoom
     local url      = string.format("%s#/%s/%s", baseURL, orgName, roomName)
     updateBrowserSource("Caller-1-Camera-VDON",  url .. "/C1?stream=camera")
     updateBrowserSource("Caller-1-Content-VDON", url .. "/C1?stream=content")
@@ -88,9 +88,9 @@ function script_properties ()
         "textRoom", "Room Name", obs.OBS_TEXT_DEFAULT)
 
     --  create update button
-	obs.obs_properties_add_button(props, "buttonUpdate", "Update Configuration", function ()
+    obs.obs_properties_add_button(props, "buttonUpdate", "Update Configuration", function ()
         updateConfiguration()
-	    return true
+        return true
     end)
 
     return props
@@ -107,8 +107,8 @@ end
 --  script hook: update state from UI properties
 function script_update (settings)
     --  fetch property values
-	ctx.propsVal.textBase = obs.obs_data_get_string(settings, "textBase")
-	ctx.propsVal.textOrg  = obs.obs_data_get_string(settings, "textOrg")
-	ctx.propsVal.textRoom = obs.obs_data_get_string(settings, "textRoom")
+    ctx.propsVal.textBase = obs.obs_data_get_string(settings, "textBase")
+    ctx.propsVal.textOrg  = obs.obs_data_get_string(settings, "textOrg")
+    ctx.propsVal.textRoom = obs.obs_data_get_string(settings, "textRoom")
 end
 
