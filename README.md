@@ -6,11 +6,11 @@ VDON Call
 
 **VDON Call** is a [WebRTC](https://en.wikipedia.org/wiki/WebRTC)/[NDI](https://ndi.tv)-based
 remote caller ingest solution for live video productions, based on
-the two swiss army knifes in their field: the awesome, low-latency,
+the two Swiss army knives in their field: the awesome, low-latency,
 P2P-based video streaming facility [VDO.Ninja](https://vdo.ninja),
 and the awesome, ultra-flexible video mixing software
 [OBS Studio](https://obsproject.com). An instance of the landing page, the
-corresponding URL trampoline, of **VDON Call** is publically available
+corresponding URL trampoline, of **VDON Call** is publicly available
 under the meaningful name URL [caller.studio](https://caller.studio)
 (*caller of the studio*).
 
@@ -81,7 +81,7 @@ The solution consists of the following parts which have to be installed:
    with attached parameters is used by all **VDON Call** components
    (see below) to expand the short URLs to the underlying VDO.Ninja URLs.
    For convenience reasons, an instance of this URL trampoline
-   is publically available under the meaningful URL
+   is publicly available under the meaningful URL
    [caller.studio](https://caller.studio).
 
 2. **WEBRTC-TO-NDI GATEWAY:**
@@ -128,7 +128,7 @@ The solution consists of the following logical parts under run-time:
 
 - **URL Trampoline**
 
-  This is the URL trampoline which is deployed to a publically reachable
+  This is the URL trampoline which is deployed to a publicly reachable
   URL like `https://caller.studio`, and which can be used by the
   production crew to easily generate the required "short" URLs based
   on unique organisation name and a room name (unique per organisation). Its
@@ -141,7 +141,7 @@ The solution consists of the following logical parts under run-time:
 
   This is the caller sender-side, i.e., Google Chrome opened a URL
   like `https://caller.studio/#/example/example/C1`.
-  The result the VDO.Ninja user interface, configured for a caller
+  The result is the VDO.Ninja user interface, configured for a caller
   participating in a room where the user can only see its own camera and
   shared content preview and the return feed of the production (here
   a multiview from vMix).
@@ -192,7 +192,7 @@ The solution consists of the following logical parts under run-time:
   stream, this vMix instance also exports a multiview video stream
   which shows the caller ingest multiview, selected callers, the
   program video stream and the clock. Either the program or (as
-  shown shere) the multiview video stream is then send back to the
+  shown here) the multiview video stream is then sent back to the
   callers via a companion Google Chrome instance accessing the URL
   `https://caller.studio/#/example/example/A1` (standard) or
   `https://caller.studio/#/example/example/A2?mode=meshcast` (using the VDO.Ninja meshcast feature).
@@ -246,7 +246,7 @@ The design of **VDON Call** is based on the following cruxes:
   in the room and especially reduce the load on the callers as good
   as possible.
 
-- **REDUCED USER INTERFAC CLUTTER:**
+- **REDUCED USER INTERFACE CLUTTER:**
   The *Caller* mode in VDO.Ninja is forced to be as simple as
   possible from a user interface perspective (many features are
   intentionally disabled) to not confuse the callers as good as
